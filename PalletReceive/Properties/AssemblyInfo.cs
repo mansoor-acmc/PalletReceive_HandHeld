@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Pallet Receive")]
-[assembly: AssemblyDescription("Pallets Received on Marpak and Location Transfer")]
+[assembly: AssemblyDescription("Pallets Received on Marpak and Transfer Location")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ACMC")]
 [assembly: AssemblyProduct("PalletReceive")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright ©  2019 - 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.5.0.6")]
+[assembly: AssemblyVersion("2.6.0.0")]
 
 // Below attribute is to suppress FxCop warning "CA2232 : Microsoft.Usage : Add STAThreadAttribute to assembly"
 // as Device app does not support STA thread.

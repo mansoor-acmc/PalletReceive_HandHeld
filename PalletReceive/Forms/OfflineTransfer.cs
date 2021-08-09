@@ -139,7 +139,7 @@ namespace PalletReceive.Forms
                     tbLocation.Focus();
 
                 }
-                else if (!AppVariables.WarehouseLocations.Exists(t => t.locationField.Equals(tbLocation.Text.Trim())))
+                else if (!AppVariables.WarehouseLocations.Exists(t => t.Location.Equals(tbLocation.Text.Trim())))
                 {
                     msg = "Location \"" + tbLocation.Text.Trim() + "\" is not correct.";
                     SystemSounds.Question.Play();

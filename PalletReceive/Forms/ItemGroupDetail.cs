@@ -22,10 +22,10 @@ namespace PalletReceive
 
         private void ItemGroupDetail_Load(object sender, EventArgs e)
         {
-            lbItemId.Text = ItemSummary.itemNumberField;
-            lbProductName.Text = ItemSummary.itemDescriptionField;
-            lbGradeShadeCaliber.Text = ItemSummary.gradeField + " / " + ItemSummary.shadeField + " / " + ItemSummary.caliberField;
-            lbTotal.Text = "Total rows: " + ItemSummary.numOfPalletsField.ToString();
+            lbItemId.Text = ItemSummary.ItemNumber;
+            lbProductName.Text = ItemSummary.ItemDescription;
+            lbGradeShadeCaliber.Text = ItemSummary.Grade + " / " + ItemSummary.Shade + " / " + ItemSummary.Caliber;
+            lbTotal.Text = "Total rows: " + ItemSummary.NumOfPallets.ToString();
 
             DataBind();
         }
@@ -39,10 +39,10 @@ namespace PalletReceive
                     throw new Exception(AppVariables.NetworkDown);
                 
                 DMCheckService client = new DMCheckService();
-                var rows = client.ItemGroupPallets(ItemSummary.itemNumberField,
-                    ItemSummary.gradeField,
-                    ItemSummary.shadeField,
-                    ItemSummary.caliberField);
+                var rows = client.ItemGroupPallets(ItemSummary.ItemNumber,
+                    ItemSummary.Grade,
+                    ItemSummary.Shade,
+                    ItemSummary.Caliber);
                 lbTotal.Text = "Total rows: " + rows.Count().ToString();
 
                 gridPallets.DataSource = rows;
@@ -110,9 +110,9 @@ namespace PalletReceive
 
             if (row != null)
             {
-                if (row.isPostedField)
+                if (row.IsPosted)
                 {
-                    msg = "Pallet:"+row.palletNumField+" has already used for creating Production Order OR already Transfered to Invertory Journal. \r\nCannot open for editing.";
+                    msg = "Pallet:"+row.PalletNum+" has already used for creating Production Order OR already Transfered to Invertory Journal. \r\nCannot open for editing.";
                     new DBClass().SubmitMessage(msg, "ItemGroupDetail.OpenItem", "");
                     MessageBox.Show(msg, "Open Pallet [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     msg = string.Empty;
@@ -120,7 +120,7 @@ namespace PalletReceive
                 }
 
                 bool isReFetchPallet = false;
-                if (Char.IsNumber(row.palletNumField, 0))
+                if (Char.IsNumber(row.PalletNum, 0))
                     isReFetchPallet = true;
 
                 if (AppVariables.RoleName == RoleType.SortingLine)
@@ -142,7 +142,7 @@ namespace PalletReceive
                 if (isReFetchPallet)
                 {
                     DMCheckService client = new DMCheckService();
-                    row = client.GetPalletInfoByRecordId(row.recordIdField, true);
+                    row = client.GetPalletInfoByRecordId(row.RecordId, true);
 
                 }
                 rows.RemoveAt(gridPallets.CurrentRowIndex);
@@ -190,11 +190,11 @@ namespace PalletReceive
                     {
                         DMCheckService client = new DMCheckService();
                         bool isUpdated = false, isUpdated1 = false;
-                        client.PrintAgainPallet(PalletInfo.palletNumField, PalletInfo.recordIdField, true, AppVariables.DeviceName, AppVariables.UpdatedBy, out isUpdated, out isUpdated1);
+                        client.PrintAgainPallet(PalletInfo.PalletNum, PalletInfo.RecordId, true, AppVariables.DeviceName, AppVariables.UpdatedBy, out isUpdated, out isUpdated1);
                         if (isUpdated)
                         {
-                            msg = "Pallet '" + PalletInfo.palletNumField + "' has been sent for Re-Print.";
-                            new DBClass().SubmitMessage(msg, "ItemGroupDetail.btnPrint_Click", "PalletNum:" + PalletInfo.palletNumField + ", RecId:" + PalletInfo.recordIdField.ToString());
+                            msg = "Pallet '" + PalletInfo.PalletNum + "' has been sent for Re-Print.";
+                            new DBClass().SubmitMessage(msg, "ItemGroupDetail.btnPrint_Click", "PalletNum:" + PalletInfo.PalletNum + ", RecId:" + PalletInfo.RecordId.ToString());
                             MessageBox.Show(msg, "Print Again [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                             msg = string.Empty;
                         }

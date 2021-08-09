@@ -31,3 +31,6 @@ Now included record history of sending Location Transfer to Web service. (Change
 Version 2.5.1.0
 Now Recording whether Pallet entered Manually or not, and username. 
 Settings for Manual entry is allowed or not
+
+Version 2.6.0.0
+Upgraded to Dynamics 365 WCF services

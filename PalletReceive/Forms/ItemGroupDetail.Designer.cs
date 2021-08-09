@@ -244,14 +244,14 @@
             this.dataGridTextBoxColumn1.Format = "";
             this.dataGridTextBoxColumn1.FormatInfo = null;
             this.dataGridTextBoxColumn1.HeaderText = "Pallet #";
-            this.dataGridTextBoxColumn1.MappingName = "palletNumField";
+            this.dataGridTextBoxColumn1.MappingName = "PalletNum";
             // 
             // dataGridTextBoxColumn2
             // 
             this.dataGridTextBoxColumn2.Format = "n2";
             this.dataGridTextBoxColumn2.FormatInfo = null;
             this.dataGridTextBoxColumn2.HeaderText = "Qty";
-            this.dataGridTextBoxColumn2.MappingName = "totalSurfaceField";
+            this.dataGridTextBoxColumn2.MappingName = "TotalSurface";
             this.dataGridTextBoxColumn2.NullText = "-";
             this.dataGridTextBoxColumn2.Width = 35;
             // 
@@ -260,7 +260,7 @@
             this.dataGridTextBoxColumn7.Format = "dd/MM/yyyy";
             this.dataGridTextBoxColumn7.FormatInfo = null;
             this.dataGridTextBoxColumn7.HeaderText = "Date";
-            this.dataGridTextBoxColumn7.MappingName = "shiftDateField";
+            this.dataGridTextBoxColumn7.MappingName = "ShiftDate";
             this.dataGridTextBoxColumn7.Width = 56;
             // 
             // dataGridTextBoxColumn4
@@ -268,7 +268,7 @@
             this.dataGridTextBoxColumn4.Format = "";
             this.dataGridTextBoxColumn4.FormatInfo = null;
             this.dataGridTextBoxColumn4.HeaderText = "SL Appr";
-            this.dataGridTextBoxColumn4.MappingName = "isApprovedBySLField";
+            this.dataGridTextBoxColumn4.MappingName = "IsApprovedBySL";
             this.dataGridTextBoxColumn4.NullText = "-";
             this.dataGridTextBoxColumn4.Width = 25;
             // 
@@ -277,7 +277,7 @@
             this.dataGridTextBoxColumn3.Format = "";
             this.dataGridTextBoxColumn3.FormatInfo = null;
             this.dataGridTextBoxColumn3.HeaderText = "FG Appr";
-            this.dataGridTextBoxColumn3.MappingName = "isApprovedByFGField";
+            this.dataGridTextBoxColumn3.MappingName = "IsApprovedByFG";
             this.dataGridTextBoxColumn3.NullText = "-";
             this.dataGridTextBoxColumn3.Width = 25;
             // 
@@ -304,7 +304,7 @@
             this.dataGridTextBoxColumn8.Format = "";
             this.dataGridTextBoxColumn8.FormatInfo = null;
             this.dataGridTextBoxColumn8.HeaderText = "Shift";
-            this.dataGridTextBoxColumn8.MappingName = "shiftField";
+            this.dataGridTextBoxColumn8.MappingName = "Shift";
             this.dataGridTextBoxColumn8.Width = 27;
             // 
             // panel7

@@ -195,7 +195,7 @@
             this.dataGridTextBoxColumn1.Format = "";
             this.dataGridTextBoxColumn1.FormatInfo = null;
             this.dataGridTextBoxColumn1.HeaderText = "Gr";
-            this.dataGridTextBoxColumn1.MappingName = "gradeField";
+            this.dataGridTextBoxColumn1.MappingName = "Grade";
             this.dataGridTextBoxColumn1.Width = 20;
             // 
             // dataGridTextBoxColumn2
@@ -203,7 +203,7 @@
             this.dataGridTextBoxColumn2.Format = "";
             this.dataGridTextBoxColumn2.FormatInfo = null;
             this.dataGridTextBoxColumn2.HeaderText = "Sh";
-            this.dataGridTextBoxColumn2.MappingName = "shadeField";
+            this.dataGridTextBoxColumn2.MappingName = "Shade";
             this.dataGridTextBoxColumn2.Width = 25;
             // 
             // dataGridTextBoxColumn3
@@ -211,7 +211,7 @@
             this.dataGridTextBoxColumn3.Format = "";
             this.dataGridTextBoxColumn3.FormatInfo = null;
             this.dataGridTextBoxColumn3.HeaderText = "Cal";
-            this.dataGridTextBoxColumn3.MappingName = "caliberField";
+            this.dataGridTextBoxColumn3.MappingName = "Caliber";
             this.dataGridTextBoxColumn3.Width = 20;
             // 
             // dataGridTextBoxColumn4
@@ -226,7 +226,7 @@
             this.dataGridTextBoxColumn5.Format = "n0";
             this.dataGridTextBoxColumn5.FormatInfo = null;
             this.dataGridTextBoxColumn5.HeaderText = "Pals";
-            this.dataGridTextBoxColumn5.MappingName = "numOfPalletsField";
+            this.dataGridTextBoxColumn5.MappingName = "NumOfPallets";
             this.dataGridTextBoxColumn5.Width = 35;
             // 
             // dataGridTextBoxColumn6

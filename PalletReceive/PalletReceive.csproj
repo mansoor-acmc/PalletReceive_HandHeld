@@ -230,10 +230,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://172.17.0.50/HandHeldServices/DeviceOps.svc">
+    <WebReferenceUrl Include="http://172.17.0.50/ServicesD365/DeviceOps.svc">
       <UrlBehavior>Static</UrlBehavior>
       <RelPath>Web References\WebRefDeviceOps\</RelPath>
-      <UpdateFromURL>http://172.17.0.50/HandHeldServices/DeviceOps.svc</UpdateFromURL>
+      <UpdateFromURL>http://172.17.0.50/ServicesD365/DeviceOps.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -243,10 +243,10 @@
       <CachedSettingsPropName>
       </CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://172.17.0.50/HandHeldServices/DMCheckService.svc">
+    <WebReferenceUrl Include="http://172.17.0.50/ServicesD365/DMCheckService.svc">
       <UrlBehavior>Static</UrlBehavior>
       <RelPath>Web References\DMServices\</RelPath>
-      <UpdateFromURL>http://172.17.0.50/HandHeldServices/DMCheckService.svc</UpdateFromURL>
+      <UpdateFromURL>http://172.17.0.50/ServicesD365/DMCheckService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

@@ -24,13 +24,12 @@ namespace PalletReceive.DMServices {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IDMCheckService", Namespace="http://tempuri.org/")]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Delegate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(XppObjectBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ProxyBase))]
     public partial class DMCheckService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         /// <remarks/>
         public DMCheckService() {
-            this.Url = "http://172.17.0.50/HandHeldServices/DMCheckService.svc";
+            this.Url = "http://172.17.0.50/ServicesD365/DMCheckService.svc";
         }
         
         /// <remarks/>
@@ -250,7 +249,7 @@ namespace PalletReceive.DMServices {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/DMClearPrintAgain", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
         public DMExportMiniContract[] DMClearPrintAgain() {
             object[] results = this.Invoke("DMClearPrintAgain", new object[0]);
             return ((DMExportMiniContract[])(results[0]));
@@ -270,8 +269,8 @@ namespace PalletReceive.DMServices {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/UpdateOfflinePallets", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
-        public DMExportContract[] UpdateOfflinePallets([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")] DMExportOfflineContract[] lines) {
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+        public DMExportContract[] UpdateOfflinePallets([System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")] DMExportOfflineContract[] lines) {
             object[] results = this.Invoke("UpdateOfflinePallets", new object[] {
                         lines});
             return ((DMExportContract[])(results[0]));
@@ -314,7 +313,7 @@ namespace PalletReceive.DMServices {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/SummaryPallets", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
         public DMSummaryContract[] SummaryPallets([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string itemId) {
             object[] results = this.Invoke("SummaryPallets", new object[] {
                         itemId});
@@ -336,7 +335,7 @@ namespace PalletReceive.DMServices {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/ItemGroupPallets", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
         public DMExportContract[] ItemGroupPallets([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string itemId, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string grade, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string shade, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string caliber) {
             object[] results = this.Invoke("ItemGroupPallets", new object[] {
                         itemId,
@@ -436,7 +435,7 @@ namespace PalletReceive.DMServices {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/GetWHLocations", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
         public WmsLocationContract[] GetWHLocations() {
             object[] results = this.Invoke("GetWHLocations", new object[0]);
             return ((WmsLocationContract[])(results[0]));
@@ -521,706 +520,706 @@ namespace PalletReceive.DMServices {
     /// <remarks/>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
     public partial class DMExportContract : XppObjectBase {
         
-        private string barCodePalletFieldField;
+        private string barCodePalletField;
         
-        private int boxesOnPalletFieldField;
+        private int boxesOnPalletField;
         
-        private bool boxesOnPalletFieldSpecified1Field;
+        private bool boxesOnPalletFieldSpecified;
         
-        private string caliberFieldField;
+        private string caliberField;
         
-        private System.DateTime cancelDateTimeFieldField;
+        private System.DateTime cancelDateTimeField;
         
-        private bool cancelDateTimeFieldSpecified1Field;
+        private bool cancelDateTimeFieldSpecified;
         
-        private bool codeLabelFieldField;
+        private bool codeLabelField;
         
-        private bool codeLabelFieldSpecified1Field;
+        private bool codeLabelFieldSpecified;
         
-        private string dMShortDesc2FieldField;
+        private string dMShortDescField;
         
-        private string dMShortDescFieldField;
+        private string dMShortDesc2Field;
         
-        private string deviceNameFieldField;
+        private string deviceNameField;
         
-        private string deviceUserFieldField;
+        private string deviceUserField;
         
-        private System.DateTime fGApprovalTimeFieldField;
+        private System.DateTime fGApprovalTimeField;
         
-        private bool fGApprovalTimeFieldSpecified1Field;
+        private bool fGApprovalTimeFieldSpecified;
         
-        private string gradeFieldField;
+        private string gradeField;
         
-        private bool isApprovedByFGFieldField;
+        private bool isApprovedByFGField;
         
-        private bool isApprovedByFGFieldSpecified1Field;
+        private bool isApprovedByFGFieldSpecified;
         
-        private bool isApprovedBySLFieldField;
+        private bool isApprovedBySLField;
         
-        private bool isApprovedBySLFieldSpecified1Field;
+        private bool isApprovedBySLFieldSpecified;
         
-        private bool isCancelledFieldField;
+        private bool isCancelledField;
         
-        private bool isCancelledFieldSpecified1Field;
+        private bool isCancelledFieldSpecified;
         
-        private bool isPostedFieldField;
+        private bool isPostedField;
         
-        private bool isPostedFieldSpecified1Field;
+        private bool isPostedFieldSpecified;
         
-        private string itemDescFieldField;
+        private string itemDescField;
         
-        private string itemNumberFieldField;
+        private string itemNumberField;
         
-        private PalletTransportBy lGVOrForkliftFieldField;
+        private PalletTransportBy lGVOrForkliftField;
         
-        private bool lGVOrForkliftFieldSpecified1Field;
+        private bool lGVOrForkliftFieldSpecified;
         
-        private int lineOfOriginFieldField;
+        private int lineOfOriginField;
         
-        private bool lineOfOriginFieldSpecified1Field;
+        private bool lineOfOriginFieldSpecified;
         
-        private long marpakMovNumFieldField;
+        private long marpakMovNumField;
         
-        private bool marpakMovNumFieldSpecified1Field;
+        private bool marpakMovNumFieldSpecified;
         
-        private long movementNumberFieldField;
+        private long movementNumberField;
         
-        private bool movementNumberFieldSpecified1Field;
+        private bool movementNumberFieldSpecified;
         
-        private string palletNumFieldField;
+        private string palletNumField;
         
-        private int piecesForBoxFieldField;
+        private int piecesForBoxField;
         
-        private bool piecesForBoxFieldSpecified1Field;
+        private bool piecesForBoxFieldSpecified;
         
-        private long recordIdFieldField;
+        private long recordIdField;
         
-        private bool recordIdFieldSpecified1Field;
+        private bool recordIdFieldSpecified;
         
-        private string shadeFieldField;
+        private string shadeField;
         
-        private System.DateTime shiftDateFieldField;
+        private int shiftField;
         
-        private bool shiftDateFieldSpecified1Field;
+        private bool shiftFieldSpecified;
         
-        private int shiftFieldField;
+        private System.DateTime shiftDateField;
         
-        private bool shiftFieldSpecified1Field;
+        private bool shiftDateFieldSpecified;
         
-        private string sizeFieldField;
+        private string sizeField;
         
-        private decimal surfaceMQBoxFieldField;
+        private decimal surfaceMQBoxField;
         
-        private bool surfaceMQBoxFieldSpecified1Field;
+        private bool surfaceMQBoxFieldSpecified;
         
-        private System.DateTime timeStampFieldField;
+        private System.DateTime timeStampField;
         
-        private bool timeStampFieldSpecified1Field;
+        private bool timeStampFieldSpecified;
         
-        private int totalPiecesOnPalletFieldField;
+        private int totalPiecesOnPalletField;
         
-        private bool totalPiecesOnPalletFieldSpecified1Field;
+        private bool totalPiecesOnPalletFieldSpecified;
         
-        private decimal totalSurfaceFieldField;
+        private decimal totalSurfaceField;
         
-        private bool totalSurfaceFieldSpecified1Field;
+        private bool totalSurfaceFieldSpecified;
         
-        private string whLocationIdFieldField;
+        private int whichMarpakField;
         
-        private int whichMarpakFieldField;
+        private bool whichMarpakFieldSpecified;
         
-        private bool whichMarpakFieldSpecified1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string barCodePalletField {
-            get {
-                return this.barCodePalletFieldField;
-            }
-            set {
-                this.barCodePalletFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int boxesOnPalletField {
-            get {
-                return this.boxesOnPalletFieldField;
-            }
-            set {
-                this.boxesOnPalletFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("boxesOnPalletFieldSpecified")]
-        public bool boxesOnPalletFieldSpecified1 {
-            get {
-                return this.boxesOnPalletFieldSpecified1Field;
-            }
-            set {
-                this.boxesOnPalletFieldSpecified1Field = value;
-            }
-        }
+        private string whLocationIdField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string caliberField {
+        public string BarCodePallet {
             get {
-                return this.caliberFieldField;
+                return this.barCodePalletField;
             }
             set {
-                this.caliberFieldField = value;
+                this.barCodePalletField = value;
             }
         }
         
         /// <remarks/>
-        public System.DateTime cancelDateTimeField {
+        public int BoxesOnPallet {
             get {
-                return this.cancelDateTimeFieldField;
+                return this.boxesOnPalletField;
             }
             set {
-                this.cancelDateTimeFieldField = value;
+                this.boxesOnPalletField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("cancelDateTimeFieldSpecified")]
-        public bool cancelDateTimeFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool BoxesOnPalletSpecified {
             get {
-                return this.cancelDateTimeFieldSpecified1Field;
+                return this.boxesOnPalletFieldSpecified;
             }
             set {
-                this.cancelDateTimeFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool codeLabelField {
-            get {
-                return this.codeLabelFieldField;
-            }
-            set {
-                this.codeLabelFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("codeLabelFieldSpecified")]
-        public bool codeLabelFieldSpecified1 {
-            get {
-                return this.codeLabelFieldSpecified1Field;
-            }
-            set {
-                this.codeLabelFieldSpecified1Field = value;
+                this.boxesOnPalletFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string dMShortDesc2Field {
+        public string Caliber {
             get {
-                return this.dMShortDesc2FieldField;
+                return this.caliberField;
             }
             set {
-                this.dMShortDesc2FieldField = value;
+                this.caliberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime CancelDateTime {
+            get {
+                return this.cancelDateTimeField;
+            }
+            set {
+                this.cancelDateTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CancelDateTimeSpecified {
+            get {
+                return this.cancelDateTimeFieldSpecified;
+            }
+            set {
+                this.cancelDateTimeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool CodeLabel {
+            get {
+                return this.codeLabelField;
+            }
+            set {
+                this.codeLabelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodeLabelSpecified {
+            get {
+                return this.codeLabelFieldSpecified;
+            }
+            set {
+                this.codeLabelFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string dMShortDescField {
+        public string DMShortDesc {
             get {
-                return this.dMShortDescFieldField;
+                return this.dMShortDescField;
             }
             set {
-                this.dMShortDescFieldField = value;
+                this.dMShortDescField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string deviceNameField {
+        public string DMShortDesc2 {
             get {
-                return this.deviceNameFieldField;
+                return this.dMShortDesc2Field;
             }
             set {
-                this.deviceNameFieldField = value;
+                this.dMShortDesc2Field = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string deviceUserField {
+        public string DeviceName {
             get {
-                return this.deviceUserFieldField;
+                return this.deviceNameField;
             }
             set {
-                this.deviceUserFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime fGApprovalTimeField {
-            get {
-                return this.fGApprovalTimeFieldField;
-            }
-            set {
-                this.fGApprovalTimeFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("fGApprovalTimeFieldSpecified")]
-        public bool fGApprovalTimeFieldSpecified1 {
-            get {
-                return this.fGApprovalTimeFieldSpecified1Field;
-            }
-            set {
-                this.fGApprovalTimeFieldSpecified1Field = value;
+                this.deviceNameField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string gradeField {
+        public string DeviceUser {
             get {
-                return this.gradeFieldField;
+                return this.deviceUserField;
             }
             set {
-                this.gradeFieldField = value;
+                this.deviceUserField = value;
             }
         }
         
         /// <remarks/>
-        public bool isApprovedByFGField {
+        public System.DateTime FGApprovalTime {
             get {
-                return this.isApprovedByFGFieldField;
+                return this.fGApprovalTimeField;
             }
             set {
-                this.isApprovedByFGFieldField = value;
+                this.fGApprovalTimeField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isApprovedByFGFieldSpecified")]
-        public bool isApprovedByFGFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FGApprovalTimeSpecified {
             get {
-                return this.isApprovedByFGFieldSpecified1Field;
+                return this.fGApprovalTimeFieldSpecified;
             }
             set {
-                this.isApprovedByFGFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool isApprovedBySLField {
-            get {
-                return this.isApprovedBySLFieldField;
-            }
-            set {
-                this.isApprovedBySLFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isApprovedBySLFieldSpecified")]
-        public bool isApprovedBySLFieldSpecified1 {
-            get {
-                return this.isApprovedBySLFieldSpecified1Field;
-            }
-            set {
-                this.isApprovedBySLFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool isCancelledField {
-            get {
-                return this.isCancelledFieldField;
-            }
-            set {
-                this.isCancelledFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isCancelledFieldSpecified")]
-        public bool isCancelledFieldSpecified1 {
-            get {
-                return this.isCancelledFieldSpecified1Field;
-            }
-            set {
-                this.isCancelledFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool isPostedField {
-            get {
-                return this.isPostedFieldField;
-            }
-            set {
-                this.isPostedFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isPostedFieldSpecified")]
-        public bool isPostedFieldSpecified1 {
-            get {
-                return this.isPostedFieldSpecified1Field;
-            }
-            set {
-                this.isPostedFieldSpecified1Field = value;
+                this.fGApprovalTimeFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string itemDescField {
+        public string Grade {
             get {
-                return this.itemDescFieldField;
+                return this.gradeField;
             }
             set {
-                this.itemDescFieldField = value;
+                this.gradeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsApprovedByFG {
+            get {
+                return this.isApprovedByFGField;
+            }
+            set {
+                this.isApprovedByFGField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsApprovedByFGSpecified {
+            get {
+                return this.isApprovedByFGFieldSpecified;
+            }
+            set {
+                this.isApprovedByFGFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsApprovedBySL {
+            get {
+                return this.isApprovedBySLField;
+            }
+            set {
+                this.isApprovedBySLField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsApprovedBySLSpecified {
+            get {
+                return this.isApprovedBySLFieldSpecified;
+            }
+            set {
+                this.isApprovedBySLFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsCancelled {
+            get {
+                return this.isCancelledField;
+            }
+            set {
+                this.isCancelledField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsCancelledSpecified {
+            get {
+                return this.isCancelledFieldSpecified;
+            }
+            set {
+                this.isCancelledFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsPosted {
+            get {
+                return this.isPostedField;
+            }
+            set {
+                this.isPostedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsPostedSpecified {
+            get {
+                return this.isPostedFieldSpecified;
+            }
+            set {
+                this.isPostedFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string itemNumberField {
+        public string ItemDesc {
             get {
-                return this.itemNumberFieldField;
+                return this.itemDescField;
             }
             set {
-                this.itemNumberFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public PalletTransportBy lGVOrForkliftField {
-            get {
-                return this.lGVOrForkliftFieldField;
-            }
-            set {
-                this.lGVOrForkliftFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lGVOrForkliftFieldSpecified")]
-        public bool lGVOrForkliftFieldSpecified1 {
-            get {
-                return this.lGVOrForkliftFieldSpecified1Field;
-            }
-            set {
-                this.lGVOrForkliftFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int lineOfOriginField {
-            get {
-                return this.lineOfOriginFieldField;
-            }
-            set {
-                this.lineOfOriginFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lineOfOriginFieldSpecified")]
-        public bool lineOfOriginFieldSpecified1 {
-            get {
-                return this.lineOfOriginFieldSpecified1Field;
-            }
-            set {
-                this.lineOfOriginFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long marpakMovNumField {
-            get {
-                return this.marpakMovNumFieldField;
-            }
-            set {
-                this.marpakMovNumFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("marpakMovNumFieldSpecified")]
-        public bool marpakMovNumFieldSpecified1 {
-            get {
-                return this.marpakMovNumFieldSpecified1Field;
-            }
-            set {
-                this.marpakMovNumFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public long movementNumberField {
-            get {
-                return this.movementNumberFieldField;
-            }
-            set {
-                this.movementNumberFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("movementNumberFieldSpecified")]
-        public bool movementNumberFieldSpecified1 {
-            get {
-                return this.movementNumberFieldSpecified1Field;
-            }
-            set {
-                this.movementNumberFieldSpecified1Field = value;
+                this.itemDescField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string palletNumField {
+        public string ItemNumber {
             get {
-                return this.palletNumFieldField;
+                return this.itemNumberField;
             }
             set {
-                this.palletNumFieldField = value;
+                this.itemNumberField = value;
             }
         }
         
         /// <remarks/>
-        public int piecesForBoxField {
+        public PalletTransportBy LGVOrForklift {
             get {
-                return this.piecesForBoxFieldField;
+                return this.lGVOrForkliftField;
             }
             set {
-                this.piecesForBoxFieldField = value;
+                this.lGVOrForkliftField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("piecesForBoxFieldSpecified")]
-        public bool piecesForBoxFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LGVOrForkliftSpecified {
             get {
-                return this.piecesForBoxFieldSpecified1Field;
+                return this.lGVOrForkliftFieldSpecified;
             }
             set {
-                this.piecesForBoxFieldSpecified1Field = value;
+                this.lGVOrForkliftFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        public long recordIdField {
+        public int LineOfOrigin {
             get {
-                return this.recordIdFieldField;
+                return this.lineOfOriginField;
             }
             set {
-                this.recordIdFieldField = value;
+                this.lineOfOriginField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("recordIdFieldSpecified")]
-        public bool recordIdFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LineOfOriginSpecified {
             get {
-                return this.recordIdFieldSpecified1Field;
+                return this.lineOfOriginFieldSpecified;
             }
             set {
-                this.recordIdFieldSpecified1Field = value;
+                this.lineOfOriginFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string shadeField {
+        public long MarpakMovNum {
             get {
-                return this.shadeFieldField;
+                return this.marpakMovNumField;
             }
             set {
-                this.shadeFieldField = value;
+                this.marpakMovNumField = value;
             }
         }
         
         /// <remarks/>
-        public System.DateTime shiftDateField {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MarpakMovNumSpecified {
             get {
-                return this.shiftDateFieldField;
+                return this.marpakMovNumFieldSpecified;
             }
             set {
-                this.shiftDateFieldField = value;
+                this.marpakMovNumFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("shiftDateFieldSpecified")]
-        public bool shiftDateFieldSpecified1 {
+        public long MovementNumber {
             get {
-                return this.shiftDateFieldSpecified1Field;
+                return this.movementNumberField;
             }
             set {
-                this.shiftDateFieldSpecified1Field = value;
+                this.movementNumberField = value;
             }
         }
         
         /// <remarks/>
-        public int shiftField {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool MovementNumberSpecified {
             get {
-                return this.shiftFieldField;
+                return this.movementNumberFieldSpecified;
             }
             set {
-                this.shiftFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("shiftFieldSpecified")]
-        public bool shiftFieldSpecified1 {
-            get {
-                return this.shiftFieldSpecified1Field;
-            }
-            set {
-                this.shiftFieldSpecified1Field = value;
+                this.movementNumberFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string sizeField {
+        public string PalletNum {
             get {
-                return this.sizeFieldField;
+                return this.palletNumField;
             }
             set {
-                this.sizeFieldField = value;
+                this.palletNumField = value;
             }
         }
         
         /// <remarks/>
-        public decimal surfaceMQBoxField {
+        public int PiecesForBox {
             get {
-                return this.surfaceMQBoxFieldField;
+                return this.piecesForBoxField;
             }
             set {
-                this.surfaceMQBoxFieldField = value;
+                this.piecesForBoxField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("surfaceMQBoxFieldSpecified")]
-        public bool surfaceMQBoxFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PiecesForBoxSpecified {
             get {
-                return this.surfaceMQBoxFieldSpecified1Field;
+                return this.piecesForBoxFieldSpecified;
             }
             set {
-                this.surfaceMQBoxFieldSpecified1Field = value;
+                this.piecesForBoxFieldSpecified = value;
             }
         }
         
         /// <remarks/>
-        public System.DateTime timeStampField {
+        public long RecordId {
             get {
-                return this.timeStampFieldField;
+                return this.recordIdField;
             }
             set {
-                this.timeStampFieldField = value;
+                this.recordIdField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("timeStampFieldSpecified")]
-        public bool timeStampFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RecordIdSpecified {
             get {
-                return this.timeStampFieldSpecified1Field;
+                return this.recordIdFieldSpecified;
             }
             set {
-                this.timeStampFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int totalPiecesOnPalletField {
-            get {
-                return this.totalPiecesOnPalletFieldField;
-            }
-            set {
-                this.totalPiecesOnPalletFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("totalPiecesOnPalletFieldSpecified")]
-        public bool totalPiecesOnPalletFieldSpecified1 {
-            get {
-                return this.totalPiecesOnPalletFieldSpecified1Field;
-            }
-            set {
-                this.totalPiecesOnPalletFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public decimal totalSurfaceField {
-            get {
-                return this.totalSurfaceFieldField;
-            }
-            set {
-                this.totalSurfaceFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("totalSurfaceFieldSpecified")]
-        public bool totalSurfaceFieldSpecified1 {
-            get {
-                return this.totalSurfaceFieldSpecified1Field;
-            }
-            set {
-                this.totalSurfaceFieldSpecified1Field = value;
+                this.recordIdFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string whLocationIdField {
+        public string Shade {
             get {
-                return this.whLocationIdFieldField;
+                return this.shadeField;
             }
             set {
-                this.whLocationIdFieldField = value;
+                this.shadeField = value;
             }
         }
         
         /// <remarks/>
-        public int whichMarpakField {
+        public int Shift {
             get {
-                return this.whichMarpakFieldField;
+                return this.shiftField;
             }
             set {
-                this.whichMarpakFieldField = value;
+                this.shiftField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("whichMarpakFieldSpecified")]
-        public bool whichMarpakFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShiftSpecified {
             get {
-                return this.whichMarpakFieldSpecified1Field;
+                return this.shiftFieldSpecified;
             }
             set {
-                this.whichMarpakFieldSpecified1Field = value;
+                this.shiftFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime ShiftDate {
+            get {
+                return this.shiftDateField;
+            }
+            set {
+                this.shiftDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ShiftDateSpecified {
+            get {
+                return this.shiftDateFieldSpecified;
+            }
+            set {
+                this.shiftDateFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal SurfaceMQBox {
+            get {
+                return this.surfaceMQBoxField;
+            }
+            set {
+                this.surfaceMQBoxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SurfaceMQBoxSpecified {
+            get {
+                return this.surfaceMQBoxFieldSpecified;
+            }
+            set {
+                this.surfaceMQBoxFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime TimeStamp {
+            get {
+                return this.timeStampField;
+            }
+            set {
+                this.timeStampField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TimeStampSpecified {
+            get {
+                return this.timeStampFieldSpecified;
+            }
+            set {
+                this.timeStampFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TotalPiecesOnPallet {
+            get {
+                return this.totalPiecesOnPalletField;
+            }
+            set {
+                this.totalPiecesOnPalletField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TotalPiecesOnPalletSpecified {
+            get {
+                return this.totalPiecesOnPalletFieldSpecified;
+            }
+            set {
+                this.totalPiecesOnPalletFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal TotalSurface {
+            get {
+                return this.totalSurfaceField;
+            }
+            set {
+                this.totalSurfaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TotalSurfaceSpecified {
+            get {
+                return this.totalSurfaceFieldSpecified;
+            }
+            set {
+                this.totalSurfaceFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int WhichMarpak {
+            get {
+                return this.whichMarpakField;
+            }
+            set {
+                this.whichMarpakField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool WhichMarpakSpecified {
+            get {
+                return this.whichMarpakFieldSpecified;
+            }
+            set {
+                this.whichMarpakFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string whLocationId {
+            get {
+                return this.whLocationIdField;
+            }
+            set {
+                this.whLocationIdField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
     public enum PalletTransportBy {
         
         /// <remarks/>
@@ -1231,78 +1230,34 @@ namespace PalletReceive.DMServices {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WmsLocationContract))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMSummaryContract))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportOfflineContract))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportMiniContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMForTransfer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportOfflineContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMSummaryContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportItemNumContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WmsLocationContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemCodeContract))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportContract))]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
-    public partial class XppObjectBase {
-        
-        private PropertyChangedEventHandler propertyChangedField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public PropertyChangedEventHandler PropertyChanged {
-            get {
-                return this.propertyChangedField;
-            }
-            set {
-                this.propertyChangedField = value;
-            }
-        }
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp")]
+    public partial class XppObjectBase : ProxyBase {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(XppObjectBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportMiniContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMForTransfer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportOfflineContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMSummaryContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportItemNumContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WmsLocationContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ItemCodeContract))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DMExportContract))]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel")]
-    public partial class PropertyChangedEventHandler : MulticastDelegate {
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyChangedEventHandler))]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System")]
-    public partial class MulticastDelegate : Delegate {
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MulticastDelegate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PropertyChangedEventHandler))]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System")]
-    public partial class Delegate {
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        private System.Xml.XmlQualifiedName factoryTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        public System.Xml.XmlQualifiedName FactoryType {
-            get {
-                return this.factoryTypeField;
-            }
-            set {
-                this.factoryTypeField = value;
-            }
-        }
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.KernelInterop")]
+    public partial class ProxyBase {
     }
     
     /// <remarks/>
@@ -1711,19 +1666,83 @@ namespace PalletReceive.DMServices {
     /// <remarks/>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
-    public partial class WmsLocationContract : XppObjectBase {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+    public partial class DMExportMiniContract : XppObjectBase {
         
-        private string locationFieldField;
+        private string barCodePalletField;
+        
+        private string dMShortDescField;
+        
+        private string dMShortDesc2Field;
+        
+        private string palletNumField;
+        
+        private long recordIdField;
+        
+        private bool recordIdFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string locationField {
+        public string BarCodePallet {
             get {
-                return this.locationFieldField;
+                return this.barCodePalletField;
             }
             set {
-                this.locationFieldField = value;
+                this.barCodePalletField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DMShortDesc {
+            get {
+                return this.dMShortDescField;
+            }
+            set {
+                this.dMShortDescField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DMShortDesc2 {
+            get {
+                return this.dMShortDesc2Field;
+            }
+            set {
+                this.dMShortDesc2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string PalletNum {
+            get {
+                return this.palletNumField;
+            }
+            set {
+                this.palletNumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long RecordId {
+            get {
+                return this.recordIdField;
+            }
+            set {
+                this.recordIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RecordIdSpecified {
+            get {
+                return this.recordIdFieldSpecified;
+            }
+            set {
+                this.recordIdFieldSpecified = value;
             }
         }
     }
@@ -1731,171 +1750,82 @@ namespace PalletReceive.DMServices {
     /// <remarks/>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
-    public partial class DMSummaryContract : XppObjectBase {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+    public partial class DMForTransfer : XppObjectBase {
         
-        private string caliberFieldField;
+        private bool isPostedField;
         
-        private string gradeFieldField;
+        private bool isPostedFieldSpecified;
         
-        private string itemDescriptionFieldField;
+        private bool isTransferredField;
         
-        private string itemNumberFieldField;
+        private bool isTransferredFieldSpecified;
         
-        private int numOfPalletsApprovedFieldField;
+        private string palletNumField;
         
-        private bool numOfPalletsApprovedFieldSpecified1Field;
-        
-        private int numOfPalletsFieldField;
-        
-        private bool numOfPalletsFieldSpecified1Field;
-        
-        private int numOfPalletsPostedFieldField;
-        
-        private bool numOfPalletsPostedFieldSpecified1Field;
-        
-        private string shadeFieldField;
-        
-        private decimal totalQtyFieldField;
-        
-        private bool totalQtyFieldSpecified1Field;
+        private string whLocationIdField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string caliberField {
+        public bool IsPosted {
             get {
-                return this.caliberFieldField;
+                return this.isPostedField;
             }
             set {
-                this.caliberFieldField = value;
+                this.isPostedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsPostedSpecified {
+            get {
+                return this.isPostedFieldSpecified;
+            }
+            set {
+                this.isPostedFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsTransferred {
+            get {
+                return this.isTransferredField;
+            }
+            set {
+                this.isTransferredField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsTransferredSpecified {
+            get {
+                return this.isTransferredFieldSpecified;
+            }
+            set {
+                this.isTransferredFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string gradeField {
+        public string PalletNum {
             get {
-                return this.gradeFieldField;
+                return this.palletNumField;
             }
             set {
-                this.gradeFieldField = value;
+                this.palletNumField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string itemDescriptionField {
+        public string whLocationId {
             get {
-                return this.itemDescriptionFieldField;
+                return this.whLocationIdField;
             }
             set {
-                this.itemDescriptionFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string itemNumberField {
-            get {
-                return this.itemNumberFieldField;
-            }
-            set {
-                this.itemNumberFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int numOfPalletsApprovedField {
-            get {
-                return this.numOfPalletsApprovedFieldField;
-            }
-            set {
-                this.numOfPalletsApprovedFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("numOfPalletsApprovedFieldSpecified")]
-        public bool numOfPalletsApprovedFieldSpecified1 {
-            get {
-                return this.numOfPalletsApprovedFieldSpecified1Field;
-            }
-            set {
-                this.numOfPalletsApprovedFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int numOfPalletsField {
-            get {
-                return this.numOfPalletsFieldField;
-            }
-            set {
-                this.numOfPalletsFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("numOfPalletsFieldSpecified")]
-        public bool numOfPalletsFieldSpecified1 {
-            get {
-                return this.numOfPalletsFieldSpecified1Field;
-            }
-            set {
-                this.numOfPalletsFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int numOfPalletsPostedField {
-            get {
-                return this.numOfPalletsPostedFieldField;
-            }
-            set {
-                this.numOfPalletsPostedFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("numOfPalletsPostedFieldSpecified")]
-        public bool numOfPalletsPostedFieldSpecified1 {
-            get {
-                return this.numOfPalletsPostedFieldSpecified1Field;
-            }
-            set {
-                this.numOfPalletsPostedFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string shadeField {
-            get {
-                return this.shadeFieldField;
-            }
-            set {
-                this.shadeFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public decimal totalQtyField {
-            get {
-                return this.totalQtyFieldField;
-            }
-            set {
-                this.totalQtyFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("totalQtyFieldSpecified")]
-        public bool totalQtyFieldSpecified1 {
-            get {
-                return this.totalQtyFieldSpecified1Field;
-            }
-            set {
-                this.totalQtyFieldSpecified1Field = value;
+                this.whLocationIdField = value;
             }
         }
     }
@@ -1903,203 +1833,203 @@ namespace PalletReceive.DMServices {
     /// <remarks/>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
     public partial class DMExportOfflineContract : XppObjectBase {
         
-        private decimal boxesOnPalletFieldField;
+        private decimal boxesOnPalletField;
         
-        private bool boxesOnPalletFieldSpecified1Field;
+        private bool boxesOnPalletFieldSpecified;
         
-        private string caliberFieldField;
+        private string caliberField;
         
-        private string deviceNameFieldField;
+        private string deviceNameField;
         
-        private string deviceUserFieldField;
+        private string deviceUserField;
         
-        private string gradeFieldField;
+        private string gradeField;
         
-        private bool isApprovedByFGFieldField;
+        private bool isApprovedByFGField;
         
-        private bool isApprovedByFGFieldSpecified1Field;
+        private bool isApprovedByFGFieldSpecified;
         
-        private bool isApprovedBySLFieldField;
+        private bool isApprovedBySLField;
         
-        private bool isApprovedBySLFieldSpecified1Field;
+        private bool isApprovedBySLFieldSpecified;
         
-        private NoYes isOfflineModeFieldField;
+        private NoYes isOfflineModeField;
         
-        private bool isOfflineModeFieldSpecified1Field;
+        private bool isOfflineModeFieldSpecified;
         
-        private string palletNumFieldField;
+        private string palletNumField;
         
-        private string shadeFieldField;
+        private string shadeField;
         
-        private string whLocationIdFieldField;
+        private string whLocationIdField;
         
         /// <remarks/>
-        public decimal boxesOnPalletField {
+        public decimal BoxesOnPallet {
             get {
-                return this.boxesOnPalletFieldField;
+                return this.boxesOnPalletField;
             }
             set {
-                this.boxesOnPalletFieldField = value;
+                this.boxesOnPalletField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("boxesOnPalletFieldSpecified")]
-        public bool boxesOnPalletFieldSpecified1 {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool BoxesOnPalletSpecified {
             get {
-                return this.boxesOnPalletFieldSpecified1Field;
+                return this.boxesOnPalletFieldSpecified;
             }
             set {
-                this.boxesOnPalletFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string caliberField {
-            get {
-                return this.caliberFieldField;
-            }
-            set {
-                this.caliberFieldField = value;
+                this.boxesOnPalletFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string deviceNameField {
+        public string Caliber {
             get {
-                return this.deviceNameFieldField;
+                return this.caliberField;
             }
             set {
-                this.deviceNameFieldField = value;
+                this.caliberField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string deviceUserField {
+        public string DeviceName {
             get {
-                return this.deviceUserFieldField;
+                return this.deviceNameField;
             }
             set {
-                this.deviceUserFieldField = value;
+                this.deviceNameField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string gradeField {
+        public string DeviceUser {
             get {
-                return this.gradeFieldField;
+                return this.deviceUserField;
             }
             set {
-                this.gradeFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool isApprovedByFGField {
-            get {
-                return this.isApprovedByFGFieldField;
-            }
-            set {
-                this.isApprovedByFGFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isApprovedByFGFieldSpecified")]
-        public bool isApprovedByFGFieldSpecified1 {
-            get {
-                return this.isApprovedByFGFieldSpecified1Field;
-            }
-            set {
-                this.isApprovedByFGFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool isApprovedBySLField {
-            get {
-                return this.isApprovedBySLFieldField;
-            }
-            set {
-                this.isApprovedBySLFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isApprovedBySLFieldSpecified")]
-        public bool isApprovedBySLFieldSpecified1 {
-            get {
-                return this.isApprovedBySLFieldSpecified1Field;
-            }
-            set {
-                this.isApprovedBySLFieldSpecified1Field = value;
-            }
-        }
-        
-        /// <remarks/>
-        public NoYes isOfflineModeField {
-            get {
-                return this.isOfflineModeFieldField;
-            }
-            set {
-                this.isOfflineModeFieldField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("isOfflineModeFieldSpecified")]
-        public bool isOfflineModeFieldSpecified1 {
-            get {
-                return this.isOfflineModeFieldSpecified1Field;
-            }
-            set {
-                this.isOfflineModeFieldSpecified1Field = value;
+                this.deviceUserField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string palletNumField {
+        public string Grade {
             get {
-                return this.palletNumFieldField;
+                return this.gradeField;
             }
             set {
-                this.palletNumFieldField = value;
+                this.gradeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsApprovedByFG {
+            get {
+                return this.isApprovedByFGField;
+            }
+            set {
+                this.isApprovedByFGField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsApprovedByFGSpecified {
+            get {
+                return this.isApprovedByFGFieldSpecified;
+            }
+            set {
+                this.isApprovedByFGFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsApprovedBySL {
+            get {
+                return this.isApprovedBySLField;
+            }
+            set {
+                this.isApprovedBySLField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsApprovedBySLSpecified {
+            get {
+                return this.isApprovedBySLFieldSpecified;
+            }
+            set {
+                this.isApprovedBySLFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public NoYes IsOfflineMode {
+            get {
+                return this.isOfflineModeField;
+            }
+            set {
+                this.isOfflineModeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool IsOfflineModeSpecified {
+            get {
+                return this.isOfflineModeFieldSpecified;
+            }
+            set {
+                this.isOfflineModeFieldSpecified = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string shadeField {
+        public string PalletNum {
             get {
-                return this.shadeFieldField;
+                return this.palletNumField;
             }
             set {
-                this.shadeFieldField = value;
+                this.palletNumField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string whLocationIdField {
+        public string Shade {
             get {
-                return this.whLocationIdFieldField;
+                return this.shadeField;
             }
             set {
-                this.whLocationIdFieldField = value;
+                this.shadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string whLocationId {
+            get {
+                return this.whLocationIdField;
+            }
+            set {
+                this.whLocationIdField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp")]
     public enum NoYes {
         
         /// <remarks/>
@@ -2112,83 +2042,395 @@ namespace PalletReceive.DMServices {
     /// <remarks/>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SyncServices.DataManagerServices")]
-    public partial class DMExportMiniContract : XppObjectBase {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+    public partial class DMSummaryContract : XppObjectBase {
         
-        private string barCodePalletFieldField;
+        private string caliberField;
         
-        private string dMShortDesc2FieldField;
+        private string gradeField;
         
-        private string dMShortDescFieldField;
+        private string itemDescriptionField;
         
-        private string palletNumFieldField;
+        private string itemNumberField;
         
-        private long recordIdFieldField;
+        private int numOfPalletsField;
         
-        private bool recordIdFieldSpecified1Field;
+        private bool numOfPalletsFieldSpecified;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string barCodePalletField {
-            get {
-                return this.barCodePalletFieldField;
-            }
-            set {
-                this.barCodePalletFieldField = value;
-            }
-        }
+        private int numOfPalletsApprovedField;
         
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string dMShortDesc2Field {
-            get {
-                return this.dMShortDesc2FieldField;
-            }
-            set {
-                this.dMShortDesc2FieldField = value;
-            }
-        }
+        private bool numOfPalletsApprovedFieldSpecified;
+        
+        private int numOfPalletsPostedField;
+        
+        private bool numOfPalletsPostedFieldSpecified;
+        
+        private string shadeField;
+        
+        private decimal totalQtyField;
+        
+        private bool totalQtyFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string dMShortDescField {
+        public string Caliber {
             get {
-                return this.dMShortDescFieldField;
+                return this.caliberField;
             }
             set {
-                this.dMShortDescFieldField = value;
+                this.caliberField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string palletNumField {
+        public string Grade {
             get {
-                return this.palletNumFieldField;
+                return this.gradeField;
             }
             set {
-                this.palletNumFieldField = value;
+                this.gradeField = value;
             }
         }
         
         /// <remarks/>
-        public long recordIdField {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ItemDescription {
             get {
-                return this.recordIdFieldField;
+                return this.itemDescriptionField;
             }
             set {
-                this.recordIdFieldField = value;
+                this.itemDescriptionField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("recordIdFieldSpecified")]
-        public bool recordIdFieldSpecified1 {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ItemNumber {
             get {
-                return this.recordIdFieldSpecified1Field;
+                return this.itemNumberField;
             }
             set {
-                this.recordIdFieldSpecified1Field = value;
+                this.itemNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NumOfPallets {
+            get {
+                return this.numOfPalletsField;
+            }
+            set {
+                this.numOfPalletsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NumOfPalletsSpecified {
+            get {
+                return this.numOfPalletsFieldSpecified;
+            }
+            set {
+                this.numOfPalletsFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NumOfPalletsApproved {
+            get {
+                return this.numOfPalletsApprovedField;
+            }
+            set {
+                this.numOfPalletsApprovedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NumOfPalletsApprovedSpecified {
+            get {
+                return this.numOfPalletsApprovedFieldSpecified;
+            }
+            set {
+                this.numOfPalletsApprovedFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NumOfPalletsPosted {
+            get {
+                return this.numOfPalletsPostedField;
+            }
+            set {
+                this.numOfPalletsPostedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NumOfPalletsPostedSpecified {
+            get {
+                return this.numOfPalletsPostedFieldSpecified;
+            }
+            set {
+                this.numOfPalletsPostedFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Shade {
+            get {
+                return this.shadeField;
+            }
+            set {
+                this.shadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal TotalQty {
+            get {
+                return this.totalQtyField;
+            }
+            set {
+                this.totalQtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TotalQtySpecified {
+            get {
+                return this.totalQtyFieldSpecified;
+            }
+            set {
+                this.totalQtyFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+    public partial class DMExportItemNumContract : XppObjectBase {
+        
+        private System.DateTime dateSaveField;
+        
+        private bool dateSaveFieldSpecified;
+        
+        private int hasProcessedField;
+        
+        private bool hasProcessedFieldSpecified;
+        
+        private string itemNumberField;
+        
+        /// <remarks/>
+        public System.DateTime DateSave {
+            get {
+                return this.dateSaveField;
+            }
+            set {
+                this.dateSaveField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DateSaveSpecified {
+            get {
+                return this.dateSaveFieldSpecified;
+            }
+            set {
+                this.dateSaveFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int HasProcessed {
+            get {
+                return this.hasProcessedField;
+            }
+            set {
+                this.hasProcessedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool HasProcessedSpecified {
+            get {
+                return this.hasProcessedFieldSpecified;
+            }
+            set {
+                this.hasProcessedFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ItemNumber {
+            get {
+                return this.itemNumberField;
+            }
+            set {
+                this.itemNumberField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+    public partial class WmsLocationContract : XppObjectBase {
+        
+        private string locationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Location {
+            get {
+                return this.locationField;
+            }
+            set {
+                this.locationField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+    public partial class ItemCodeContract : XppObjectBase {
+        
+        private decimal boxPerPalletField;
+        
+        private bool boxPerPalletFieldSpecified;
+        
+        private string desc1Field;
+        
+        private string desc2Field;
+        
+        private string itemNumberField;
+        
+        private string sizeField;
+        
+        private decimal sqmPerBoxField;
+        
+        private bool sqmPerBoxFieldSpecified;
+        
+        private decimal tilesPerBoxField;
+        
+        private bool tilesPerBoxFieldSpecified;
+        
+        /// <remarks/>
+        public decimal BoxPerPallet {
+            get {
+                return this.boxPerPalletField;
+            }
+            set {
+                this.boxPerPalletField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool BoxPerPalletSpecified {
+            get {
+                return this.boxPerPalletFieldSpecified;
+            }
+            set {
+                this.boxPerPalletFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Desc1 {
+            get {
+                return this.desc1Field;
+            }
+            set {
+                this.desc1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Desc2 {
+            get {
+                return this.desc2Field;
+            }
+            set {
+                this.desc2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string ItemNumber {
+            get {
+                return this.itemNumberField;
+            }
+            set {
+                this.itemNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal SqmPerBox {
+            get {
+                return this.sqmPerBoxField;
+            }
+            set {
+                this.sqmPerBoxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SqmPerBoxSpecified {
+            get {
+                return this.sqmPerBoxFieldSpecified;
+            }
+            set {
+                this.sqmPerBoxFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal TilesPerBox {
+            get {
+                return this.tilesPerBoxField;
+            }
+            set {
+                this.tilesPerBoxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TilesPerBoxSpecified {
+            get {
+                return this.tilesPerBoxFieldSpecified;
+            }
+            set {
+                this.tilesPerBoxFieldSpecified = value;
             }
         }
     }

@@ -43,7 +43,7 @@ namespace PalletReceive
                 this.dataGridTableStyle1.MappingName = gridPallets.DataSource.GetType().Name;
                 gridPallets.Refresh();
                 if (rows.Count() > 0)
-                    lbItemName.Text = rows[0].itemDescriptionField;
+                    lbItemName.Text = rows[0].ItemDescription;
             }
             catch (WebException exp)
             {

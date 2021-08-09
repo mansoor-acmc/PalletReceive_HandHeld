@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?xsd=xsd1" filename="DMCheckService.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?wsdl" filename="DMCheckService.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?xsd=xsd2" filename="DMCheckService0.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?xsd=xsd3" filename="DMCheckService1.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?xsd=xsd0" filename="DMCheckService2.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?disco" filename="DMCheckService.disco" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?xsd=xsd5" filename="DMCheckService3.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/HandHeldServices/DMCheckService.svc?xsd=xsd4" filename="DMCheckService4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?xsd=xsd2" filename="DMCheckService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?xsd=xsd3" filename="DMCheckService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?disco" filename="DMCheckService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?xsd=xsd0" filename="DMCheckService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?xsd=xsd5" filename="DMCheckService2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?xsd=xsd4" filename="DMCheckService3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?wsdl" filename="DMCheckService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.17.0.50/ServicesD365/DMCheckService.svc?xsd=xsd1" filename="DMCheckService4.xsd" />
   </Results>
 </DiscoveryClientResultsFile>

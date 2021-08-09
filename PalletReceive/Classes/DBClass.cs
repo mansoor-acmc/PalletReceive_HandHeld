@@ -402,22 +402,22 @@ namespace PalletReceive
                 cmd.Parameters.Add("@p15", SqlDbType.SmallInt);
                 cmd.Parameters.Add("@p16", SqlDbType.TinyInt);
 
-                cmd.Parameters["@p1"].Value = dr.palletNumField;
-                cmd.Parameters["@p2"].Value = dr.gradeField;
-                cmd.Parameters["@p3"].Value = dr.shadeField;
-                cmd.Parameters["@p4"].Value = dr.caliberField;
-                cmd.Parameters["@p5"].Value = dr.itemNumberField;
-                cmd.Parameters["@p6"].Value = dr.shiftField;
-                cmd.Parameters["@p7"].Value = dr.shiftDateField;
-                cmd.Parameters["@p8"].Value = dr.timeStampField;
-                cmd.Parameters["@p9"].Value = dr.lineOfOriginField;
-                cmd.Parameters["@p10"].Value = dr.whichMarpakField;
-                cmd.Parameters["@p11"].Value = dr.lGVOrForkliftField;
-                cmd.Parameters["@p12"].Value = dr.sizeField;
-                cmd.Parameters["@p13"].Value = dr.recordIdField;
-                cmd.Parameters["@p14"].Value = dr.totalSurfaceField;
-                cmd.Parameters["@p15"].Value = dr.totalPiecesOnPalletField;
-                cmd.Parameters["@p16"].Value = dr.boxesOnPalletField;
+                cmd.Parameters["@p1"].Value = dr.PalletNum;
+                cmd.Parameters["@p2"].Value = dr.Grade;
+                cmd.Parameters["@p3"].Value = dr.Shade;
+                cmd.Parameters["@p4"].Value = dr.Caliber;
+                cmd.Parameters["@p5"].Value = dr.ItemNumber;
+                cmd.Parameters["@p6"].Value = dr.Shift;
+                cmd.Parameters["@p7"].Value = dr.ShiftDate;
+                cmd.Parameters["@p8"].Value = dr.TimeStamp;
+                cmd.Parameters["@p9"].Value = dr.LineOfOrigin;
+                cmd.Parameters["@p10"].Value = dr.WhichMarpak;
+                cmd.Parameters["@p11"].Value = dr.LGVOrForklift;
+                cmd.Parameters["@p12"].Value = dr.Size;
+                cmd.Parameters["@p13"].Value = dr.RecordId;
+                cmd.Parameters["@p14"].Value = dr.TotalSurface;
+                cmd.Parameters["@p15"].Value = dr.TotalPiecesOnPallet;
+                cmd.Parameters["@p16"].Value = dr.BoxesOnPallet;
 
                 cmd.CommandText = sqlString;
                 cmd.CommandType = CommandType.Text;
@@ -458,12 +458,12 @@ namespace PalletReceive
                     cmd.Parameters.Add("@p4", SqlDbType.Bit);
                 cmd.Parameters.Add("@p5", SqlDbType.NVarChar);
 
-                cmd.Parameters["@p1"].Value = dr.deviceNameField;
-                cmd.Parameters["@p2"].Value = dr.deviceUserField;
+                cmd.Parameters["@p1"].Value = dr.DeviceName;
+                cmd.Parameters["@p2"].Value = dr.DeviceUser;
                 cmd.Parameters["@p3"].Value = true;
                 if (isManualUpdated)
                     cmd.Parameters["@p4"].Value = true;
-                cmd.Parameters["@p5"].Value = dr.palletNumField;
+                cmd.Parameters["@p5"].Value = dr.PalletNum;
 
                 cmd.CommandText = sqlString;
                 cmd.CommandType = CommandType.Text;
@@ -509,12 +509,12 @@ namespace PalletReceive
                     cmd.Parameters.Add("@p4", SqlDbType.Bit);
                 cmd.Parameters.Add("@p5", SqlDbType.NVarChar);
 
-                cmd.Parameters["@p1"].Value = dr.deviceNameField;
-                cmd.Parameters["@p2"].Value = dr.deviceUserField;
+                cmd.Parameters["@p1"].Value = dr.DeviceName;
+                cmd.Parameters["@p2"].Value = dr.DeviceUser;
                 cmd.Parameters["@p3"].Value = true;
                 if (isManualUpdated)
                     cmd.Parameters["@p4"].Value = true;
-                cmd.Parameters["@p5"].Value = dr.palletNumField;
+                cmd.Parameters["@p5"].Value = dr.PalletNum;
 
                 cmd.CommandText = sqlString;
                 cmd.CommandType = CommandType.Text;
@@ -900,15 +900,15 @@ namespace PalletReceive
                 cmd.Parameters.Add("@p8", SqlDbType.Real);
                 cmd.Parameters.Add("@p9", SqlDbType.NVarChar);
 
-                cmd.Parameters["@p1"].Value = dr.gradeField;
-                cmd.Parameters["@p2"].Value = dr.shadeField;
-                cmd.Parameters["@p3"].Value = dr.caliberField;
-                cmd.Parameters["@p4"].Value = dr.boxesOnPalletField;
-                cmd.Parameters["@p5"].Value = dr.palletNumField;
+                cmd.Parameters["@p1"].Value = dr.Grade;
+                cmd.Parameters["@p2"].Value = dr.Shade;
+                cmd.Parameters["@p3"].Value = dr.Caliber;
+                cmd.Parameters["@p4"].Value = dr.BoxesOnPallet;
+                cmd.Parameters["@p5"].Value = dr.PalletNum;
                 cmd.Parameters["@p6"].Value = true;
                 cmd.Parameters["@p7"].Value = DateTime.Now;
-                cmd.Parameters["@p8"].Value = dr.totalSurfaceField;
-                cmd.Parameters["@p9"].Value = dr.whLocationIdField;
+                cmd.Parameters["@p8"].Value = dr.TotalSurface;
+                cmd.Parameters["@p9"].Value = dr.whLocationId;
 
                 cmd.CommandText = sqlString;
                 cmd.CommandType = CommandType.Text;
@@ -968,25 +968,25 @@ namespace PalletReceive
                 cmd.Parameters.Add("@p18", SqlDbType.TinyInt);
                 cmd.Parameters.Add("@p19", SqlDbType.NVarChar);
 
-                cmd.Parameters["@p1"].Value = dr.itemNumberField;
-                cmd.Parameters["@p2"].Value = dr.shiftField;
-                cmd.Parameters["@p3"].Value = dr.shiftDateField;
-                cmd.Parameters["@p4"].Value = dr.timeStampField;
-                cmd.Parameters["@p5"].Value = dr.lineOfOriginField;
-                cmd.Parameters["@p6"].Value = dr.whichMarpakField;
-                cmd.Parameters["@p7"].Value = dr.lGVOrForkliftField;
-                cmd.Parameters["@p8"].Value = dr.recordIdField;
-                cmd.Parameters["@p9"].Value = dr.totalSurfaceField;
-                cmd.Parameters["@p10"].Value = dr.sizeField;
-                cmd.Parameters["@p11"].Value = dr.palletNumField;
+                cmd.Parameters["@p1"].Value = dr.ItemNumber;
+                cmd.Parameters["@p2"].Value = dr.Shift;
+                cmd.Parameters["@p3"].Value = dr.ShiftDate;
+                cmd.Parameters["@p4"].Value = dr.TimeStamp;
+                cmd.Parameters["@p5"].Value = dr.LineOfOrigin;
+                cmd.Parameters["@p6"].Value = dr.WhichMarpak;
+                cmd.Parameters["@p7"].Value = dr.LGVOrForklift;
+                cmd.Parameters["@p8"].Value = dr.RecordId;
+                cmd.Parameters["@p9"].Value = dr.TotalSurface;
+                cmd.Parameters["@p10"].Value = dr.Size;
+                cmd.Parameters["@p11"].Value = dr.PalletNum;
                 cmd.Parameters["@p12"].Value = true;
-                cmd.Parameters["@p13"].Value = dr.gradeField;
-                cmd.Parameters["@p14"].Value = dr.shadeField;
-                cmd.Parameters["@p15"].Value = dr.caliberField;
-                cmd.Parameters["@p16"].Value = dr.isApprovedBySLField;
-                cmd.Parameters["@p17"].Value = dr.totalPiecesOnPalletField;
-                cmd.Parameters["@p18"].Value = dr.boxesOnPalletField;
-                cmd.Parameters["@p19"].Value = dr.whLocationIdField;
+                cmd.Parameters["@p13"].Value = dr.Grade;
+                cmd.Parameters["@p14"].Value = dr.Shade;
+                cmd.Parameters["@p15"].Value = dr.Caliber;
+                cmd.Parameters["@p16"].Value = dr.IsApprovedBySL;
+                cmd.Parameters["@p17"].Value = dr.TotalPiecesOnPallet;
+                cmd.Parameters["@p18"].Value = dr.BoxesOnPallet;
+                cmd.Parameters["@p19"].Value = dr.whLocationId;
 
                 cmd.CommandText = sqlString;
                 cmd.CommandType = CommandType.Text;

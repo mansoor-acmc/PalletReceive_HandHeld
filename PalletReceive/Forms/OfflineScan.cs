@@ -176,14 +176,14 @@ namespace PalletReceive
         private void btnSave_Click(object sender, EventArgs e)
         {
             DMExportContract cr = new DMExportContract();
-            cr.palletNumField = lbPalletNum.Text;
-            cr.gradeField = cmbGrade.Text;
-            cr.shadeField = tbShade.Text;
-            cr.caliberField = tbCaliber.Text;
+            cr.PalletNum = lbPalletNum.Text;
+            cr.Grade = cmbGrade.Text;
+            cr.Shade = tbShade.Text;
+            cr.Caliber = tbCaliber.Text;
             //if (!string.IsNullOrEmpty(numTotalBoxesOnPallet.Text))
-            cr.boxesOnPalletField = int.Parse("0" + numTotalBoxesOnPallet.Text);
-            cr.totalSurfaceField = decimal.Parse("0" + numTotalBoxesOnPallet.Text);
-            cr.whLocationIdField = tbLocation.Text;
+            cr.BoxesOnPallet = int.Parse("0" + numTotalBoxesOnPallet.Text);
+            cr.TotalSurface = decimal.Parse("0" + numTotalBoxesOnPallet.Text);
+            cr.whLocationId = tbLocation.Text;
 
             string msg = string.Empty;
             if (new DBClass().UpdateOfflinePallet(cr) > 0)
@@ -291,27 +291,27 @@ namespace PalletReceive
                         {
                             DMExportOfflineContract contract = new DMExportOfflineContract()
                             {
-                                palletNumField = dr["Pallet"].ToString(),
-                                gradeField = dr["Grade"].ToString(),
-                                shadeField = dr["Shade"].ToString(),
-                                caliberField = dr["Caliber"].ToString(),
-                                boxesOnPalletField = decimal.Parse(dr["Boxes"].ToString()),
-                                boxesOnPalletFieldSpecified1 = true,
-                                deviceNameField = AppVariables.DeviceName,
-                                deviceUserField = AppVariables.UpdatedBy,                                
-                                isOfflineModeField = NoYes.Yes,
-                                isOfflineModeFieldSpecified1 = true,
-                                whLocationIdField = dr["Location"].ToString()
+                                PalletNum = dr["Pallet"].ToString(),
+                                Grade = dr["Grade"].ToString(),
+                                Shade = dr["Shade"].ToString(),
+                                Caliber = dr["Caliber"].ToString(),
+                                BoxesOnPallet = decimal.Parse(dr["Boxes"].ToString()),
+                                //BoxesOnPalletSpecified1 = true,
+                                DeviceName = AppVariables.DeviceName,
+                                DeviceUser = AppVariables.UpdatedBy,                                
+                                IsOfflineMode = NoYes.Yes,
+                                //isOfflineModeFieldSpecified1 = true,
+                                whLocationId = dr["Location"].ToString()
                             };
                             if (AppVariables.RoleName == RoleType.SortingLine)
                             {
-                                contract.isApprovedBySLField = true;
-                                contract.isApprovedBySLFieldSpecified1 = true;
+                                contract.IsApprovedBySL = true;
+                                //contract.IsApprovedBySLSpecified1 = true;
                             }
                             else if (AppVariables.RoleName == RoleType.FinishedGoods)
                             {
-                                contract.isApprovedByFGField = true;
-                                contract.isApprovedByFGFieldSpecified1 = true;
+                                contract.IsApprovedByFG = true;
+                                //contract.IsApprovedByFGSpecified1 = true;
                             }
 
                             lines.Add(contract);

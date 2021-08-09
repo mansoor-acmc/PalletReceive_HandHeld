@@ -24,20 +24,20 @@ namespace PalletReceive
 
         private void ChangePalletInfoSL_Load(object sender, EventArgs e)
         {
-            lbPalletNum.Text = PalletInfo.palletNumField;
-            lbItemId.Text = PalletInfo.itemNumberField;
-            lbProductName.Text = PalletInfo.itemDescField;
-            cmbGrade.Text = PalletInfo.gradeField;
-            tbShade.Text = PalletInfo.shadeField;
-            tbCaliber.Text = PalletInfo.caliberField;
-            lbSize.Text = PalletInfo.sizeField;
+            lbPalletNum.Text = PalletInfo.PalletNum;
+            lbItemId.Text = PalletInfo.ItemNumber;
+            lbProductName.Text = PalletInfo.ItemDesc;
+            cmbGrade.Text = PalletInfo.Grade;
+            tbShade.Text = PalletInfo.Shade;
+            tbCaliber.Text = PalletInfo.Caliber;
+            lbSize.Text = PalletInfo.Size;
             
-            cmbLine.Text = PalletInfo.lineOfOriginField.ToString();
-            cmbMarpak.Text = PalletInfo.whichMarpakField.ToString();
-            cmbLGVorForklift.Text = PalletInfo.lGVOrForkliftField.ToString();
-            numTotalBoxesOnPallet.Text = PalletInfo.boxesOnPalletField.ToString("n0");
+            cmbLine.Text = PalletInfo.LineOfOrigin.ToString();
+            cmbMarpak.Text = PalletInfo.WhichMarpak.ToString();
+            cmbLGVorForklift.Text = PalletInfo.LGVOrForklift.ToString();
+            numTotalBoxesOnPallet.Text = PalletInfo.BoxesOnPallet.ToString("n0");
             //numTotalPieces.Text = PalletInfo.totalPiecesOnPalletField.ToString("n3");
-            //numTotalBoxesOnPallet.Text = PalletInfo.boxesOnPalletField.ToString("n3");
+            //numTotalBoxesOnPallet.Text = PalletInfo.BoxesOnPallet.ToString("n3");
 
             tbSearch.Focus();
         }
@@ -56,7 +56,7 @@ namespace PalletReceive
                 if (!DBClass.CheckInternet())
                     throw new Exception(AppVariables.NetworkDown);
 
-                if (PalletInfo == null || PalletInfo.palletNumField.Length == 0)
+                if (PalletInfo == null || PalletInfo.PalletNum.Length == 0)
                 {
                     msg = "No Pallet found.";
                     MessageBox.Show(msg, "Approve Failure [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -68,60 +68,60 @@ namespace PalletReceive
                     DMExportContract row = new DMExportContract();
                     DMCheckService client = new DMCheckService();
 
-                    row.palletNumField = PalletInfo.palletNumField;
-                    row.recordIdField = PalletInfo.recordIdField;
-                    row.recordIdFieldSpecified1 = true;
-                    row.itemNumberField = lbItemId.Text;
-                    row.gradeField = cmbGrade.Text;
-                    row.shadeField = tbShade.Text;
-                    row.caliberField = tbCaliber.Text;                    
-                    row.shiftFieldSpecified1 = false;
+                    row.PalletNum = PalletInfo.PalletNum;
+                    row.RecordId = PalletInfo.RecordId;
+                    //row.RecordIdSpecified1 = true;
+                    row.ItemNumber = lbItemId.Text;
+                    row.Grade = cmbGrade.Text;
+                    row.Shade = tbShade.Text;
+                    row.Caliber = tbCaliber.Text;                    
+                    //row.ShiftSpecified1 = false;
 
-                    row.sizeField = PalletInfo.sizeField;
-                    row.lineOfOriginField = cmbLine.SelectedIndex + 1;
-                    row.lineOfOriginFieldSpecified1 = true;
-                    row.whichMarpakField = cmbMarpak.SelectedIndex + 1;
-                    row.whichMarpakFieldSpecified1 = true;
-                    row.lGVOrForkliftField = cmbLGVorForklift.Text.Equals("LGV") ? PalletTransportBy.LGV : PalletTransportBy.Forklift;
-                    row.lGVOrForkliftFieldSpecified1 = true;
-                    //row.totalSurfaceField = decimal.Parse(numTotalBoxesOnPallet.Text);
-                    //row.totalSurfaceFieldSpecified1 = true;
-                    row.isApprovedBySLField = true;
-                    row.isApprovedBySLFieldSpecified1 = true;
-                    row.isApprovedByFGField = false;
-                    row.isApprovedByFGFieldSpecified1 = false;
+                    row.Size = PalletInfo.Size;
+                    row.LineOfOrigin = cmbLine.SelectedIndex + 1;
+                    //row.LineOfOriginSpecified1 = true;
+                    row.WhichMarpak = cmbMarpak.SelectedIndex + 1;
+                    //row.WhichMarpakSpecified1 = true;
+                    row.LGVOrForklift = cmbLGVorForklift.Text.Equals("LGV") ? PalletTransportBy.LGV : PalletTransportBy.Forklift;
+                    //row.LGVOrForkliftSpecified1 = true;
+                    //row.TotalSurface = decimal.Parse(numTotalBoxesOnPallet.Text);
+                    //row.TotalSurfaceSpecified1 = true;
+                    row.IsApprovedBySL = true;
+                    //row.IsApprovedBySLSpecified1 = true;
+                    row.IsApprovedByFG = false;
+                    //row.IsApprovedByFGSpecified1 = false;
                     
                     //row.totalPiecesOnPalletField = Convert.ToInt16(Convert.ToDecimal(numTotalPieces.Text));
                     //row.totalPiecesOnPalletFieldSpecified1 = true;
-                    row.boxesOnPalletField = Convert.ToInt16(Convert.ToDecimal(numTotalBoxesOnPallet.Text));
-                    row.boxesOnPalletFieldSpecified1 = true;
-                    row.deviceNameField = AppVariables.DeviceName;
-                    row.deviceUserField = AppVariables.UpdatedBy;
+                    row.BoxesOnPallet = Convert.ToInt16(Convert.ToDecimal(numTotalBoxesOnPallet.Text));
+                    //row.BoxesOnPalletSpecified1 = true;
+                    row.DeviceName = AppVariables.DeviceName;
+                    row.DeviceUser = AppVariables.UpdatedBy;
 
                     bool result1, result2;
                     client.UpdateAndConfirmPalletReceive(row, out result1, out result2);
 
                     if (result1) 
                     {
-                        row.shiftDateField = PalletInfo.shiftDateField;
-                        row.timeStampField = PalletInfo.timeStampField;
-                        row.shiftField = PalletInfo.shiftField;
+                        row.ShiftDate = PalletInfo.ShiftDate;
+                        row.TimeStamp = PalletInfo.TimeStamp;
+                        row.Shift = PalletInfo.Shift;
 
-                        msg = "Pallet '" + PalletInfo.palletNumField + "' has been saved and confirmed.";
+                        msg = "Pallet '" + PalletInfo.PalletNum + "' has been saved and confirmed.";
                         MessageBox.Show(msg, "Approve [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                        new DBClass().SubmitMessage(msg, "ChangePalletInfo.btnSaveApprove_Click", "PalletNum:" + PalletInfo.palletNumField +
-                            ", ItemCode:" + row.itemNumberField +
-                            ", RecId:" + PalletInfo.recordIdField.ToString() +
-                            ", Grade:" + row.gradeField +
-                            ", Shade:" + row.shadeField +
-                            ", Caliber:" + row.caliberField +
+                        new DBClass().SubmitMessage(msg, "ChangePalletInfo.btnSaveApprove_Click", "PalletNum:" + PalletInfo.PalletNum +
+                            ", ItemCode:" + row.ItemNumber +
+                            ", RecId:" + PalletInfo.RecordId.ToString() +
+                            ", Grade:" + row.Grade +
+                            ", Shade:" + row.Shade +
+                            ", Caliber:" + row.Caliber +
                             ", TotalBoxes:" + numTotalBoxesOnPallet.Text +
                             ", DeviceName:" + AppVariables.DeviceName +
                             ", DeviceUser:" + AppVariables.UpdatedBy);
                         msg = string.Empty;
 
                         DBClass db = new DBClass();
-                        if (db.GetPallet(row.palletNumField).Rows.Count.Equals(0))
+                        if (db.GetPallet(row.PalletNum).Rows.Count.Equals(0))
                         {
                             db.InsertPallet(row);
                         }
@@ -224,9 +224,9 @@ namespace PalletReceive
             if (decimal.Parse(numTotalBoxesOnPallet.Text) > maxSurface)
             {
                 msg = "Value cannot be more than " + maxSurface.ToString();
-                new DBClass().SubmitMessage(msg, "ChangePalletInfo.numTotalSurface_TextChanged", "PalletNum:" + PalletInfo.palletNumField + ", TotalBoxes=" + numTotalBoxesOnPallet.Text);
+                new DBClass().SubmitMessage(msg, "ChangePalletInfo.numTotalSurface_TextChanged", "PalletNum:" + PalletInfo.PalletNum + ", TotalBoxes=" + numTotalBoxesOnPallet.Text);
 
-                numTotalBoxesOnPallet.Text = PalletInfo.totalSurfaceField.ToString("n3");
+                numTotalBoxesOnPallet.Text = PalletInfo.TotalSurface.ToString("n3");
                 MessageBox.Show(msg, "Validate [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 msg = string.Empty;
                 numTotalBoxesOnPallet.Focus();

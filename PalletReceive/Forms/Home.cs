@@ -162,12 +162,12 @@ namespace PalletReceive
             {
                 if (AppVariables.RoleName == RoleType.FinishedGoods)
                 {
-                    if (PalletInfo != null && !string.IsNullOrEmpty(PalletInfo.palletNumField))                
+                    if (PalletInfo != null && !string.IsNullOrEmpty(PalletInfo.PalletNum))                
                     {
-                        if (!PalletInfo.isApprovedByFGField)
+                        if (!PalletInfo.IsApprovedByFG)
                         {
                             tbSearch.Text = string.Empty;
-                            throw new Exception("Pallet#"+PalletInfo.palletNumField+" has not been approved yet.\nPlease approve it before scanning next pallet.");
+                            throw new Exception("Pallet#"+PalletInfo.PalletNum+" has not been approved yet.\nPlease approve it before scanning next pallet.");
                         }
                     }
                 }
@@ -191,9 +191,9 @@ namespace PalletReceive
                 PalletInfo = client.GetPalletInfo(tbSearch.Text);
                 DataBindPallet();
                 //May be user wants to approve duplicate Pallet. Then just show this message
-                if (PalletInfo.isApprovedByFGField)
+                if (PalletInfo.IsApprovedByFG)
                 {
-                    msg = "Pallet:" + PalletInfo.palletNumField + " has already been approved by FG on '" + PalletInfo.fGApprovalTimeField.ToString("dd/MM/yyyy hh:mm:ss tt")+"'.";
+                    msg = "Pallet:" + PalletInfo.PalletNum + " has already been approved by FG on '" + PalletInfo.FGApprovalTime.ToString("dd/MM/yyyy hh:mm:ss tt")+"'.";
                     new DBClass().SubmitMessage(msg, "Home.btnFind_Click", "");
                     MessageBox.Show(msg, "Search [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                     msg = string.Empty;
@@ -228,53 +228,53 @@ namespace PalletReceive
 
         private void DataBindPallet()
         {
-            if (PalletInfo != null && !string.IsNullOrEmpty( PalletInfo.itemNumberField))
+            if (PalletInfo != null && !string.IsNullOrEmpty( PalletInfo.ItemNumber))
             {
                 EnDisControls(true);
                 tbLocation.Focus();
                 
-                lbPalletNum.Text = PalletInfo.palletNumField;
+                lbPalletNum.Text = PalletInfo.PalletNum;
                 lbIsConfirmedBySL.Visible = lbIsConfirmedByFG.Visible = lbIsPosted.Visible = lbCancelled.Visible = false;
                 btnApprove.Enabled = btnEdit.Enabled = btnCancel.Enabled = true;
 
-                if (PalletInfo.isApprovedBySLField)
+                if (PalletInfo.IsApprovedBySL)
                 {
                     lbIsConfirmedBySL.Visible = true;
                     tbSearch.Focus();
                 }
-                if (PalletInfo.isApprovedByFGField)
+                if (PalletInfo.IsApprovedByFG)
                 {
                     lbIsConfirmedByFG.Visible = true;
                     tbSearch.Focus();
                 }
-                if (PalletInfo.isCancelledField)
+                if (PalletInfo.IsCancelled)
                 {
                     lbIsConfirmedBySL.Visible = lbIsConfirmedByFG.Visible = false;
                     lbCancelled.Visible = true;
                     tbSearch.Focus();
                 }
-                if (PalletInfo.isPostedField)
+                if (PalletInfo.IsPosted)
                 {
                     lbIsConfirmedBySL.Visible = lbIsConfirmedByFG.Visible = false;
                     lbIsPosted.Visible = true;
                     btnApprove.Enabled = btnEdit.Enabled = btnCancel.Enabled = false;
                     tbSearch.Focus();
                 }
-                lbItemId.Text = PalletInfo.itemNumberField;
-                lbProductName.Text = PalletInfo.itemDescField;
-                lbGradeShadeCaliber.Text = PalletInfo.gradeField + " / " + PalletInfo.shadeField + " / " + PalletInfo.caliberField;
-                lbSize.Text = PalletInfo.sizeField;
-                lbShiftDate.Text = PalletInfo.shiftDateField.ToString("dd-MMM-yyyy");
-                lbShift.Text = ShiftName(PalletInfo.shiftField);
-                lbLineOfOrigin.Text = PalletInfo.lineOfOriginField.ToString();
-                lbMarpak.Text = PalletInfo.whichMarpakField.ToString();
-                lbLGVorForklift.Text = PalletInfo.lGVOrForkliftField.ToString();
-                lbTotalSurface.Text = PalletInfo.totalSurfaceField.ToString("n3");
+                lbItemId.Text = PalletInfo.ItemNumber;
+                lbProductName.Text = PalletInfo.ItemDesc;
+                lbGradeShadeCaliber.Text = PalletInfo.Grade + " / " + PalletInfo.Shade + " / " + PalletInfo.Caliber;
+                lbSize.Text = PalletInfo.Size;
+                lbShiftDate.Text = PalletInfo.ShiftDate.ToString("dd-MMM-yyyy");
+                lbShift.Text = ShiftName(PalletInfo.Shift);
+                lbLineOfOrigin.Text = PalletInfo.LineOfOrigin.ToString();
+                lbMarpak.Text = PalletInfo.WhichMarpak.ToString();
+                lbLGVorForklift.Text = PalletInfo.LGVOrForklift.ToString();
+                lbTotalSurface.Text = PalletInfo.TotalSurface.ToString("n3");
                 //lbTotalPieces.Text = PalletInfo.totalPiecesOnPalletField.ToString("n3");
-                lbTotalBoxes.Text = PalletInfo.boxesOnPalletField.ToString("n0");
+                lbTotalBoxes.Text = PalletInfo.BoxesOnPallet.ToString("n0");
                 lbLocation.Text = string.Empty;
-                if (!string.IsNullOrEmpty(PalletInfo.whLocationIdField))
-                    lbLocation.Text = PalletInfo.whLocationIdField;
+                if (!string.IsNullOrEmpty(PalletInfo.whLocationId))
+                    lbLocation.Text = PalletInfo.whLocationId;
 
                 
                 tbSearch.Text = string.Empty;
@@ -287,7 +287,7 @@ namespace PalletReceive
             {
                 string palletNum="";
                 if (PalletInfo != null)
-                    palletNum = PalletInfo.palletNumField;
+                    palletNum = PalletInfo.PalletNum;
                 string msg = "Pallet# " + palletNum + " does not exit. Please check again" ;
                 new DBClass().SubmitMessage(msg, "Home.DataBindPallet()", "");
                 ClearFields();
@@ -468,7 +468,7 @@ namespace PalletReceive
                     tbLocation.Text = string.Empty;
                     tbLocation.Focus();
                 }
-                else if (!AppVariables.WarehouseLocations.Exists(t => t.locationField.Equals(tbLocation.Text.Trim())))
+                else if (!AppVariables.WarehouseLocations.Exists(t => t.Location.Equals(tbLocation.Text.Trim())))
                 {
                     msg = "Location: \"" + tbLocation.Text.Trim() + "\" is not correct.";
                     SystemSounds.Question.Play();
@@ -542,7 +542,7 @@ namespace PalletReceive
                     else if (AppVariables.RoleName == RoleType.FinishedGoods)
                     {
                         isFromSL = false;
-                        if (Options.IsSlApprovalReq && PalletInfo.isApprovedBySLField == false)
+                        if (Options.IsSlApprovalReq && PalletInfo.IsApprovedBySL == false)
                         {
                             msg = "SL Approval is required.";
                             new DBClass().SubmitMessage(msg, "Home.btnApprove_Click", "");
@@ -551,7 +551,7 @@ namespace PalletReceive
                             return;
                         }
                         //If Rejected pallet is not approved by SL then FG should not be able to approve it.
-                        if (PalletInfo.gradeField.Equals("R") && !PalletInfo.isApprovedBySLField)
+                        if (PalletInfo.Grade.Equals("R") && !PalletInfo.IsApprovedBySL)
                         {
                             msg = "SL hasn't approved yet. Cannot Approve.";
                             new DBClass().SubmitMessage(msg, "Home.btnApprove_Click", "");
@@ -563,13 +563,13 @@ namespace PalletReceive
 
                     DMCheckService client = new DMCheckService();
                     string result1 = string.Empty;
-                    PalletInfo.deviceNameField = AppVariables.DeviceName;
-                    PalletInfo.deviceUserField = AppVariables.UpdatedBy;
+                    PalletInfo.DeviceName = AppVariables.DeviceName;
+                    PalletInfo.DeviceUser = AppVariables.UpdatedBy;
 
                     if (Options.IsLocationRequired)
-                        result1 = client.ConfirmPalletAndLocationReceive(PalletInfo.palletNumField,
+                        result1 = client.ConfirmPalletAndLocationReceive(PalletInfo.PalletNum,
                             tbLocation.Text.Trim(),
-                            PalletInfo.recordIdField,
+                            PalletInfo.RecordId,
                             true,
                             AppVariables.DeviceName,
                             AppVariables.UpdatedBy,
@@ -578,8 +578,8 @@ namespace PalletReceive
                     else
                     {
                         bool checkResult, checkResult1;
-                        client.ConfirmPalletReceive(PalletInfo.palletNumField,
-                            PalletInfo.recordIdField,
+                        client.ConfirmPalletReceive(PalletInfo.PalletNum,
+                            PalletInfo.RecordId,
                             true,
                             AppVariables.DeviceName,
                             AppVariables.UpdatedBy,
@@ -593,24 +593,24 @@ namespace PalletReceive
 
                     if (string.IsNullOrEmpty(result1))
                     {
-                        msg = "Pallet '" + PalletInfo.palletNumField + "' has been confirmed.";
-                        new DBClass().SubmitMessage(msg, "Home.btnApprove_Click", "PalletNum:" + PalletInfo.palletNumField + ", RecId:" + PalletInfo.recordIdField.ToString() + ", Confirmed by:" + (isFromSL ? "SL" : "FG") + ", DeviceUser: " + AppVariables.UpdatedBy + ", DeviceName: " + AppVariables.DeviceName);
+                        msg = "Pallet '" + PalletInfo.PalletNum + "' has been confirmed.";
+                        new DBClass().SubmitMessage(msg, "Home.btnApprove_Click", "PalletNum:" + PalletInfo.PalletNum + ", RecId:" + PalletInfo.RecordId.ToString() + ", Confirmed by:" + (isFromSL ? "SL" : "FG") + ", DeviceUser: " + AppVariables.UpdatedBy + ", DeviceName: " + AppVariables.DeviceName);
                         MessageBox.Show(msg, "Confirm [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                         msg = string.Empty;
 
                         lbCancelled.Visible = false;
                         if (isFromSL)
-                            PalletInfo.isApprovedBySLField = true;
+                            PalletInfo.IsApprovedBySL = true;
                         else
-                            PalletInfo.isApprovedByFGField = true;
+                            PalletInfo.IsApprovedByFG = true;
 
-                        lbIsConfirmedBySL.Visible = PalletInfo.isApprovedBySLField;
-                        lbIsConfirmedByFG.Visible = PalletInfo.isApprovedByFGField;
+                        lbIsConfirmedBySL.Visible = PalletInfo.IsApprovedBySL;
+                        lbIsConfirmedByFG.Visible = PalletInfo.IsApprovedByFG;
 
                         //lbIsConfirmed.Text = "Confirmed";
 
                         DBClass db = new DBClass();
-                        if (db.GetPallet(PalletInfo.palletNumField).Rows.Count.Equals(0))
+                        if (db.GetPallet(PalletInfo.PalletNum).Rows.Count.Equals(0))
                         {
                             db.InsertPallet(PalletInfo);
                         }
@@ -618,7 +618,7 @@ namespace PalletReceive
                     }
                     else
                     {
-                        new DBClass().SubmitMessage(result1, "Home.btnApprove_Click", "PalletNum:" + PalletInfo.palletNumField + ", RecId:" + PalletInfo.recordIdField.ToString() + ", Confirmed by:" + (isFromSL ? "SL" : "FG") + ", DeviceUser: " + AppVariables.UpdatedBy + ", DeviceName: " + AppVariables.DeviceName);
+                        new DBClass().SubmitMessage(result1, "Home.btnApprove_Click", "PalletNum:" + PalletInfo.PalletNum + ", RecId:" + PalletInfo.RecordId.ToString() + ", Confirmed by:" + (isFromSL ? "SL" : "FG") + ", DeviceUser: " + AppVariables.UpdatedBy + ", DeviceName: " + AppVariables.DeviceName);
                         MessageBox.Show(result1, "Confirm [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                         msg = string.Empty;
                     }
@@ -683,7 +683,7 @@ namespace PalletReceive
                     if (AppVariables.RoleName == RoleType.FinishedGoods)
                     {
 
-                        if (Options.IsSlApprovalReq && PalletInfo.isApprovedBySLField == false)
+                        if (Options.IsSlApprovalReq && PalletInfo.IsApprovedBySL == false)
                         {
                             msg = "SL Approval is required.";
                             new DBClass().SubmitMessage(msg, "Home.btnCancel_Click", "");
@@ -695,11 +695,11 @@ namespace PalletReceive
 
                     DMCheckService client = new DMCheckService();
                     bool result1, result2;
-                    PalletInfo.deviceNameField = AppVariables.DeviceName;
-                    PalletInfo.deviceUserField = AppVariables.UpdatedBy;
+                    PalletInfo.DeviceName = AppVariables.DeviceName;
+                    PalletInfo.DeviceUser = AppVariables.UpdatedBy;
                     //PalletInfo.isCancelledField = true;
-                    client.CancelPalletReceive(PalletInfo.palletNumField,
-                        PalletInfo.recordIdField,                        
+                    client.CancelPalletReceive(PalletInfo.PalletNum,
+                        PalletInfo.RecordId,                        
                         true,
                         AppVariables.DeviceName,
                         AppVariables.UpdatedBy,                                                
@@ -708,8 +708,8 @@ namespace PalletReceive
 
                     if (result1)
                     {
-                        msg = "Pallet '" + PalletInfo.palletNumField + "' has been 'Cancelled'.";
-                        new DBClass().SubmitMessage(msg, "Home.btnCancel_Click", "PalletNum:" + PalletInfo.palletNumField + ", RecId:" + PalletInfo.recordIdField.ToString() + ", Cancel by: FG, DeviceUser: " + AppVariables.UpdatedBy + ", DeviceName: " + AppVariables.DeviceName);
+                        msg = "Pallet '" + PalletInfo.PalletNum + "' has been 'Cancelled'.";
+                        new DBClass().SubmitMessage(msg, "Home.btnCancel_Click", "PalletNum:" + PalletInfo.PalletNum + ", RecId:" + PalletInfo.RecordId.ToString() + ", Cancel by: FG, DeviceUser: " + AppVariables.UpdatedBy + ", DeviceName: " + AppVariables.DeviceName);
                         MessageBox.Show(msg, "Cancel [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1);
                         msg = string.Empty;
                         lbIsConfirmedByFG.Visible = lbIsConfirmedBySL.Visible = false;
@@ -718,7 +718,7 @@ namespace PalletReceive
                         //lbIsConfirmed.Text = "Confirmed";
 
                         DBClass db = new DBClass();
-                        if (db.GetPallet(PalletInfo.palletNumField).Rows.Count.Equals(0))
+                        if (db.GetPallet(PalletInfo.PalletNum).Rows.Count.Equals(0))
                         {
                             db.InsertPallet(PalletInfo);
                         }
@@ -817,11 +817,11 @@ namespace PalletReceive
                 {
                     DMCheckService client = new DMCheckService();
                     bool isUpdated = false, isUpdated1 = false;
-                    client.PrintAgainPallet(PalletInfo.palletNumField, PalletInfo.recordIdField, true, AppVariables.DeviceName, AppVariables.UpdatedBy, out isUpdated, out isUpdated1);
+                    client.PrintAgainPallet(PalletInfo.PalletNum, PalletInfo.RecordId, true, AppVariables.DeviceName, AppVariables.UpdatedBy, out isUpdated, out isUpdated1);
                     if (isUpdated)
                     {
-                        msg = "Pallet '" + PalletInfo.palletNumField + "' has been sent for Re-Print.";
-                        new DBClass().SubmitMessage(msg, "Home.menuItemPrintAgain_Click", "PalletNum:" + PalletInfo.palletNumField + ", RecId:" + PalletInfo.recordIdField.ToString());
+                        msg = "Pallet '" + PalletInfo.PalletNum + "' has been sent for Re-Print.";
+                        new DBClass().SubmitMessage(msg, "Home.menuItemPrintAgain_Click", "PalletNum:" + PalletInfo.PalletNum + ", RecId:" + PalletInfo.RecordId.ToString());
                         MessageBox.Show(msg, "Print Again [" + AppVariables.DeviceName + "]", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                         msg = string.Empty;
                     }
@@ -883,7 +883,7 @@ namespace PalletReceive
             else
             {
                 ItemSummary frmSummary = new ItemSummary();
-                frmSummary.ItemNumber = PalletInfo.itemNumberField;
+                frmSummary.ItemNumber = PalletInfo.ItemNumber;
                 frmSummary.ShowDialog();
                 frmSummary.Dispose();
                 tbSearch.Focus();
