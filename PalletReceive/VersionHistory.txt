@@ -1,0 +1,33 @@
+﻿Version 1.9.5.0
+At the startup of an application Shirinking of Database is done.
+
+Version 1.9.0.0
+Adding a link on Login screen that shows the Database Size and About form.
+
+Version 2.0.0.0
+Adding WareHouse Location information, Scanning Location, and sending location to Server.
+
+Version 2.1.0.0
+Creating Transfer Journal for Location Transfer for OLD Production
+
+Version 2.5.0.0
+Updating the Web Services to Upgrade Dynamics AX from 6.2.to 6.3 CU12
+
+Version 2.5.0.2
+Pallet Transfer Location is now processed in Chunks
+
+Version 2.5.0.3
+If Duplicate pallet is entered, system gives warning before Transfer.
+
+Version 2.5.0.4
+Warehouse Location is checked from system, and if not correct then gives warning.
+
+Version 2.5.0.5
+If Wifi is down, then Pallet cannot be transferred. But system removes the lines in Offline Transfer form datagrid. Issue resolved.
+
+Version 2.5.0.6
+Now included record history of sending Location Transfer to Web service. (Change in web service only)
+
+Version 2.5.1.0
+Now Recording whether Pallet entered Manually or not, and username. 
+Settings for Manual entry is allowed or not
