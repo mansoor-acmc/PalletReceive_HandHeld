@@ -278,8 +278,7 @@ namespace PalletReceive
             //new DBClass().GetSettings(ref size, ref isSlApprovalReq);
 
             if (gridPallets.DataSource != null)
-            {
-                
+            {                
                 DataTable dt = ((DataTable)(gridPallets.DataSource));
                 if (dt != null && dt.Rows.Count > 0)
                 {

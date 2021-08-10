@@ -110,7 +110,7 @@ namespace PalletReceive
 
             if (row != null)
             {
-                if (row.IsPosted)
+                if (row.IsPosted)//if already posted then don't proceed
                 {
                     msg = "Pallet:"+row.PalletNum+" has already used for creating Production Order OR already Transfered to Invertory Journal. \r\nCannot open for editing.";
                     new DBClass().SubmitMessage(msg, "ItemGroupDetail.OpenItem", "");

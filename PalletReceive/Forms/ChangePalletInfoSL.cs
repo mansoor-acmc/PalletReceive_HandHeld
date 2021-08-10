@@ -98,6 +98,7 @@ namespace PalletReceive
                     row.DeviceName = AppVariables.DeviceName;
                     row.DeviceUser = AppVariables.UpdatedBy;
 
+                    //Now run the command to update Pallet info
                     bool result1, result2;
                     client.UpdateAndConfirmPalletReceive(row, out result1, out result2);
 

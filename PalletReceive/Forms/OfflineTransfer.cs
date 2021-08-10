@@ -339,8 +339,7 @@ namespace PalletReceive.Forms
             }
             tbSearch.Focus();
         }
-
-        
+                
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string msg = string.Empty;
@@ -511,7 +510,6 @@ namespace PalletReceive.Forms
                 }
             }
         }
-
         
     }
 }

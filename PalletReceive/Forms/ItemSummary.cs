@@ -98,8 +98,7 @@ namespace PalletReceive
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            string msg = string.Empty;
-            
+            string msg = string.Empty;            
             tbSearch.Text = tbSearch.Text.Trim().Replace("\r\n", "");
             
             if (string.IsNullOrEmpty(tbSearch.Text.Trim()))

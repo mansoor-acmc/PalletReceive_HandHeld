@@ -402,6 +402,7 @@ namespace PalletReceive
                 cmd.Parameters.Add("@p15", SqlDbType.SmallInt);
                 cmd.Parameters.Add("@p16", SqlDbType.TinyInt);
 
+                //Values
                 cmd.Parameters["@p1"].Value = dr.PalletNum;
                 cmd.Parameters["@p2"].Value = dr.Grade;
                 cmd.Parameters["@p3"].Value = dr.Shade;

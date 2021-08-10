@@ -260,7 +260,7 @@ namespace PalletReceive
                     btnApprove.Enabled = btnEdit.Enabled = btnCancel.Enabled = false;
                     tbSearch.Focus();
                 }
-                lbItemId.Text = PalletInfo.ItemNumber;
+                lbItemId.Text = PalletInfo.ItemNumber; //Item number
                 lbProductName.Text = PalletInfo.ItemDesc;
                 lbGradeShadeCaliber.Text = PalletInfo.Grade + " / " + PalletInfo.Shade + " / " + PalletInfo.Caliber;
                 lbSize.Text = PalletInfo.Size;
