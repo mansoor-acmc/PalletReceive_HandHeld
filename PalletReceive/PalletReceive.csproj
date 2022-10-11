@@ -277,6 +277,9 @@
     <None Include="Web References\DMServices\DuplicatePallet.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\DMServices\ItemCodeContract.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\DMServices\ItemForChart.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

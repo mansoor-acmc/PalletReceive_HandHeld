@@ -106,9 +106,9 @@ namespace PalletReceiveCE7
                     row.gradeField = cmbGrade.Text;
                     row.shadeField = tbShade.Text;
                     row.caliberField = tbCaliber.Text;
-                    /*row.shiftField = cmbShift.SelectedIndex + 1;
+                    row.shiftField = cmbShift.SelectedIndex + 1;
                     row.shiftFieldSpecified1 = true;
-                    row.shiftDateField = PalletInfo.shiftDateField;
+                    /*row.shiftDateField = PalletInfo.shiftDateField;
                     row.shiftDateFieldSpecified1 = true;
                     row.timeStampField = PalletInfo.timeStampField;
                     row.timeStampFieldSpecified1 = true;*/

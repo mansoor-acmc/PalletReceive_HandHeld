@@ -184,4 +184,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfWmsLocationContract" nillable="true" type="tns:ArrayOfWmsLocationContract" />
+  <xs:complexType name="ArrayOfItemCodeContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemCodeContract" nillable="true" type="tns:ItemCodeContract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItemCodeContract" nillable="true" type="tns:ArrayOfItemCodeContract" />
 </xs:schema>

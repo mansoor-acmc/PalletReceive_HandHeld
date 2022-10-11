@@ -101,34 +101,35 @@ namespace PalletReceive
 
                     row.PalletNum = PalletInfo.PalletNum;
                     row.RecordId = PalletInfo.RecordId;
-                    
+                    row.RecordIdSpecified = true;
                     row.ItemNumber = PalletInfo.ItemNumber;
                     row.Grade = cmbGrade.Text;
                     row.Shade = tbShade.Text;
                     row.Caliber = tbCaliber.Text;
-                    /*row.Shift = cmbShift.SelectedIndex + 1;
-                    row.ShiftSpecified1 = true;
-                    row.ShiftDate = PalletInfo.ShiftDate;
+                    row.Shift = cmbShift.SelectedIndex + 1;
+                    row.ShiftSpecified = true;
+                    /*row.ShiftDate = PalletInfo.ShiftDate;
                     row.ShiftDateSpecified1 = true;
                     row.TimeStamp = PalletInfo.TimeStamp;
                     row.TimeStampSpecified1 = true;*/
                     row.Size = PalletInfo.Size;
                     row.LineOfOrigin = cmbLine.SelectedIndex + 1;
-                   
+                    row.LineOfOriginSpecified = true;
                     row.WhichMarpak = cmbMarpak.SelectedIndex + 1;
-                   
+                    row.WhichMarpakSpecified = true;
                     row.LGVOrForklift = cmbLGVorForklift.Text.Equals("LGV") ? PalletTransportBy.LGV : PalletTransportBy.Forklift;
-                 
+                    row.LGVOrForkliftSpecified = true;
                     //row.TotalSurface = decimal.Parse(numTotalSurface.Text);
                     //row.TotalSurfaceSpecified1 = true;
                     row.IsApprovedBySL = true;
-                  
+                    row.IsApprovedBySLSpecified = true;
                     row.IsApprovedByFG = true;
-                   
+                    row.IsApprovedByFGSpecified = true;
                     
                     //row.totalPiecesOnPalletField = Convert.ToInt16(Convert.ToDecimal(numTotalPieces.Text));
                     //row.totalPiecesOnPalletFieldSpecified1 = true;
-                    row.BoxesOnPallet = Convert.ToInt16(Convert.ToDecimal(numTotalBoxesOnPallet.Text));                   
+                    row.BoxesOnPallet = Convert.ToInt16(Convert.ToDecimal(numTotalBoxesOnPallet.Text));
+                    row.BoxesOnPalletSpecified = true;
                     row.DeviceName = AppVariables.DeviceName;
                     row.DeviceUser = AppVariables.UpdatedBy;
 

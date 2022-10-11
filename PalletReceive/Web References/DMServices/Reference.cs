@@ -217,6 +217,28 @@ namespace PalletReceive.DMServices {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/UpdatePalletProperties", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void UpdatePalletProperties([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] DMExportContract pallet, out bool UpdatePalletPropertiesResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool UpdatePalletPropertiesResultSpecified) {
+            object[] results = this.Invoke("UpdatePalletProperties", new object[] {
+                        pallet});
+            UpdatePalletPropertiesResult = ((bool)(results[0]));
+            UpdatePalletPropertiesResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginUpdatePalletProperties(DMExportContract pallet, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("UpdatePalletProperties", new object[] {
+                        pallet}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public void EndUpdatePalletProperties(System.IAsyncResult asyncResult, out bool UpdatePalletPropertiesResult, out bool UpdatePalletPropertiesResultSpecified) {
+            object[] results = this.EndInvoke(asyncResult);
+            UpdatePalletPropertiesResult = ((bool)(results[0]));
+            UpdatePalletPropertiesResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/PrintAgainPallet", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void PrintAgainPallet([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string palletNum, long recordId, [System.Xml.Serialization.XmlIgnoreAttribute()] bool recordIdSpecified, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string deviceName, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string deviceUser, out bool PrintAgainPalletResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool PrintAgainPalletResultSpecified) {
             object[] results = this.Invoke("PrintAgainPallet", new object[] {
@@ -514,6 +536,26 @@ namespace PalletReceive.DMServices {
             object[] results = this.EndInvoke(asyncResult);
             ClearDuplicatePalletsAllResult = ((bool)(results[0]));
             ClearDuplicatePalletsAllResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IDMCheckService/GetItemCodes", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Dynamics.AX.Application")]
+        public ItemCodeContract[] GetItemCodes() {
+            object[] results = this.Invoke("GetItemCodes", new object[0]);
+            return ((ItemCodeContract[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginGetItemCodes(System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("GetItemCodes", new object[0], callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public ItemCodeContract[] EndGetItemCodes(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((ItemCodeContract[])(results[0]));
         }
     }
     

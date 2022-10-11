@@ -25,3 +25,30 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Forms.About.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Forms.ChangeLocation.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Forms.OfflineTransfer.resources
+C:\Projects\PalletReceive\PalletReceive\bin\Release\PalletReceive.exe
+C:\Projects\PalletReceive\PalletReceive\bin\Release\PalletReceive.pdb
+C:\Projects\PalletReceive\PalletReceive\bin\Release\Microsoft.WindowsMobile.dll
+C:\Projects\PalletReceive\PalletReceive\bin\Release\Microsoft.WindowsMobile.Status.dll
+C:\Projects\PalletReceive\PalletReceive\bin\Release\System.Data.SqlServerCe.dll
+C:\Projects\PalletReceive\PalletReceive\bin\Release\Microsoft.WindowsMobile.PocketOutlook.dll
+C:\Projects\PalletReceive\PalletReceive\bin\Release\Microsoft.WindowsMobile.xml
+C:\Projects\PalletReceive\PalletReceive\bin\Release\Microsoft.WindowsMobile.Status.xml
+C:\Projects\PalletReceive\PalletReceive\bin\Release\Microsoft.WindowsMobile.PocketOutlook.xml
+C:\Projects\PalletReceive\PalletReceive\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Forms.About.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Forms.ChangeLocation.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.ChangePalletInfo.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.ChangePalletInfoSL.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.ChangePassword.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Home.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Login.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.OfflineScan.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Forms.OfflineTransfer.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Search.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.ItemSummary.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.ItemGroupDetail.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Properties.Resources.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.Settings.resources
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.csproj.GenerateResource.Cache
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.exe
+C:\Projects\PalletReceive\PalletReceive\obj\Release\PalletReceive.pdb

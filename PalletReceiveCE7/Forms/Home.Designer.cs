@@ -46,7 +46,6 @@
             this.menuItemEdit = new System.Windows.Forms.MenuItem();
             this.menuItemChangePassword = new System.Windows.Forms.MenuItem();
             this.menuItemSummary = new System.Windows.Forms.MenuItem();
-            this.menuItemPrintAgain = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
             this.menuItemDownMar1 = new System.Windows.Forms.MenuItem();
             this.menuItemDownMar2 = new System.Windows.Forms.MenuItem();
@@ -205,7 +204,6 @@
             // 
             this.menuItemEdit.MenuItems.Add(this.menuItemChangePassword);
             this.menuItemEdit.MenuItems.Add(this.menuItemSummary);
-            this.menuItemEdit.MenuItems.Add(this.menuItemPrintAgain);
             this.menuItemEdit.MenuItems.Add(this.menuItem3);
             this.menuItemEdit.MenuItems.Add(this.menuItemDownMar1);
             this.menuItemEdit.MenuItems.Add(this.menuItemDownMar2);
@@ -220,11 +218,6 @@
             // 
             this.menuItemSummary.Text = "Summary";
             this.menuItemSummary.Click += new System.EventHandler(this.menuItemSummary_Click);
-            // 
-            // menuItemPrintAgain
-            // 
-            this.menuItemPrintAgain.Text = "Print Again";
-            this.menuItemPrintAgain.Click += new System.EventHandler(this.menuItemPrintAgain_Click);
             // 
             // menuItem3
             // 
@@ -946,7 +939,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label lbIsConfirmedBySL;
         private System.Windows.Forms.MenuItem menuItemSummary;
-        private System.Windows.Forms.MenuItem menuItemPrintAgain;
         private System.Windows.Forms.Label lbTotalBoxes;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.MenuItem menuItemOfflineMode;

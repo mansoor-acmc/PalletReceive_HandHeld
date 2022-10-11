@@ -70,7 +70,7 @@ namespace PalletReceive
 
                     row.PalletNum = PalletInfo.PalletNum;
                     row.RecordId = PalletInfo.RecordId;
-                    //row.RecordIdSpecified1 = true;
+                    row.RecordIdSpecified = true;
                     row.ItemNumber = lbItemId.Text;
                     row.Grade = cmbGrade.Text;
                     row.Shade = tbShade.Text;
@@ -79,22 +79,22 @@ namespace PalletReceive
 
                     row.Size = PalletInfo.Size;
                     row.LineOfOrigin = cmbLine.SelectedIndex + 1;
-                    //row.LineOfOriginSpecified1 = true;
+                    row.LineOfOriginSpecified = true;
                     row.WhichMarpak = cmbMarpak.SelectedIndex + 1;
-                    //row.WhichMarpakSpecified1 = true;
+                    row.WhichMarpakSpecified = true;
                     row.LGVOrForklift = cmbLGVorForklift.Text.Equals("LGV") ? PalletTransportBy.LGV : PalletTransportBy.Forklift;
-                    //row.LGVOrForkliftSpecified1 = true;
+                    row.LGVOrForkliftSpecified = true;
                     //row.TotalSurface = decimal.Parse(numTotalBoxesOnPallet.Text);
                     //row.TotalSurfaceSpecified1 = true;
                     row.IsApprovedBySL = true;
-                    //row.IsApprovedBySLSpecified1 = true;
+                    row.IsApprovedBySLSpecified = true;
                     row.IsApprovedByFG = false;
-                    //row.IsApprovedByFGSpecified1 = false;
+                    row.IsApprovedByFGSpecified = false;
                     
                     //row.totalPiecesOnPalletField = Convert.ToInt16(Convert.ToDecimal(numTotalPieces.Text));
                     //row.totalPiecesOnPalletFieldSpecified1 = true;
                     row.BoxesOnPallet = Convert.ToInt16(Convert.ToDecimal(numTotalBoxesOnPallet.Text));
-                    //row.BoxesOnPalletSpecified1 = true;
+                    row.BoxesOnPalletSpecified = true;
                     row.DeviceName = AppVariables.DeviceName;
                     row.DeviceUser = AppVariables.UpdatedBy;
 

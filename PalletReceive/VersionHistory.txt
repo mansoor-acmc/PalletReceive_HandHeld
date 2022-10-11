@@ -34,3 +34,6 @@ Settings for Manual entry is allowed or not
 
 Version 2.6.0.0
 Upgraded to Dynamics 365 WCF services
+
+Version 2.6.1.0
+Remove "Print Pallet Again" menu item

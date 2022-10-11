@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ACMC")]
 [assembly: AssemblyProduct("PalletReceive")]
-[assembly: AssemblyCopyright("Copyright ©  2019 - 2021")]
+[assembly: AssemblyCopyright("Copyright ©  2019 - 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.6.0.0")]
+[assembly: AssemblyVersion("2.6.1.0")]
 
 // Below attribute is to suppress FxCop warning "CA2232 : Microsoft.Usage : Add STAThreadAttribute to assembly"
 // as Device app does not support STA thread.

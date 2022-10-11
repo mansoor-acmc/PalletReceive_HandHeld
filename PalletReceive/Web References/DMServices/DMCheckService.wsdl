@@ -52,6 +52,12 @@
   <wsdl:message name="IDMCheckService_UpdateAndConfirmPalletReceive_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateAndConfirmPalletReceiveResponse" />
   </wsdl:message>
+  <wsdl:message name="IDMCheckService_UpdatePalletProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePalletProperties" />
+  </wsdl:message>
+  <wsdl:message name="IDMCheckService_UpdatePalletProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePalletPropertiesResponse" />
+  </wsdl:message>
   <wsdl:message name="IDMCheckService_PrintAgainPallet_InputMessage">
     <wsdl:part name="parameters" element="tns:PrintAgainPallet" />
   </wsdl:message>
@@ -130,6 +136,12 @@
   <wsdl:message name="IDMCheckService_ClearDuplicatePalletsAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:ClearDuplicatePalletsAllResponse" />
   </wsdl:message>
+  <wsdl:message name="IDMCheckService_GetItemCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemCodes" />
+  </wsdl:message>
+  <wsdl:message name="IDMCheckService_GetItemCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemCodesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDMCheckService">
     <wsdl:operation name="GetPing">
       <wsdl:input wsaw:Action="http://tempuri.org/IDMCheckService/GetPing" message="tns:IDMCheckService_GetPing_InputMessage" />
@@ -158,6 +170,10 @@
     <wsdl:operation name="UpdateAndConfirmPalletReceive">
       <wsdl:input wsaw:Action="http://tempuri.org/IDMCheckService/UpdateAndConfirmPalletReceive" message="tns:IDMCheckService_UpdateAndConfirmPalletReceive_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDMCheckService/UpdateAndConfirmPalletReceiveResponse" message="tns:IDMCheckService_UpdateAndConfirmPalletReceive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePalletProperties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMCheckService/UpdatePalletProperties" message="tns:IDMCheckService_UpdatePalletProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMCheckService/UpdatePalletPropertiesResponse" message="tns:IDMCheckService_UpdatePalletProperties_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PrintAgainPallet">
       <wsdl:input wsaw:Action="http://tempuri.org/IDMCheckService/PrintAgainPallet" message="tns:IDMCheckService_PrintAgainPallet_InputMessage" />
@@ -210,6 +226,10 @@
     <wsdl:operation name="ClearDuplicatePalletsAll">
       <wsdl:input wsaw:Action="http://tempuri.org/IDMCheckService/ClearDuplicatePalletsAll" message="tns:IDMCheckService_ClearDuplicatePalletsAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDMCheckService/ClearDuplicatePalletsAllResponse" message="tns:IDMCheckService_ClearDuplicatePalletsAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMCheckService/GetItemCodes" message="tns:IDMCheckService_GetItemCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMCheckService/GetItemCodesResponse" message="tns:IDMCheckService_GetItemCodes_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDMCheckService" type="tns:IDMCheckService">
@@ -270,6 +290,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateAndConfirmPalletReceive">
       <soap:operation soapAction="http://tempuri.org/IDMCheckService/UpdateAndConfirmPalletReceive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePalletProperties">
+      <soap:operation soapAction="http://tempuri.org/IDMCheckService/UpdatePalletProperties" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -387,6 +416,15 @@
     </wsdl:operation>
     <wsdl:operation name="ClearDuplicatePalletsAll">
       <soap:operation soapAction="http://tempuri.org/IDMCheckService/ClearDuplicatePalletsAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemCodes">
+      <soap:operation soapAction="http://tempuri.org/IDMCheckService/GetItemCodes" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

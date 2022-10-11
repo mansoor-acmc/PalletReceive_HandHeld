@@ -182,6 +182,7 @@ namespace PalletReceive
             cr.Caliber = tbCaliber.Text;
             //if (!string.IsNullOrEmpty(numTotalBoxesOnPallet.Text))
             cr.BoxesOnPallet = int.Parse("0" + numTotalBoxesOnPallet.Text);
+            cr.BoxesOnPalletSpecified = true;
             cr.TotalSurface = decimal.Parse("0" + numTotalBoxesOnPallet.Text);
             cr.whLocationId = tbLocation.Text;
 
@@ -295,22 +296,22 @@ namespace PalletReceive
                                 Shade = dr["Shade"].ToString(),
                                 Caliber = dr["Caliber"].ToString(),
                                 BoxesOnPallet = decimal.Parse(dr["Boxes"].ToString()),
-                                //BoxesOnPalletSpecified1 = true,
+                                BoxesOnPalletSpecified = true,
                                 DeviceName = AppVariables.DeviceName,
                                 DeviceUser = AppVariables.UpdatedBy,                                
                                 IsOfflineMode = NoYes.Yes,
-                                //isOfflineModeFieldSpecified1 = true,
+                                IsOfflineModeSpecified = true,
                                 whLocationId = dr["Location"].ToString()
                             };
                             if (AppVariables.RoleName == RoleType.SortingLine)
                             {
                                 contract.IsApprovedBySL = true;
-                                //contract.IsApprovedBySLSpecified1 = true;
+                                contract.IsApprovedBySLSpecified = true;
                             }
                             else if (AppVariables.RoleName == RoleType.FinishedGoods)
                             {
                                 contract.IsApprovedByFG = true;
-                                //contract.IsApprovedByFGSpecified1 = true;
+                                contract.IsApprovedByFGSpecified = true;
                             }
 
                             lines.Add(contract);

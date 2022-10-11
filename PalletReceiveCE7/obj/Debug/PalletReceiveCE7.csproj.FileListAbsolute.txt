@@ -24,3 +24,30 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PalletReceiveCE7\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.OfflineScan.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PalletReceiveCE7\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Search.resources
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PalletReceiveCE7\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Settings.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\PalletReceiveCE7.exe
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\PalletReceiveCE7.pdb
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\Microsoft.WindowsMobile.dll
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\Microsoft.WindowsMobile.Status.dll
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\System.Data.SqlServerCe.dll
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\Microsoft.WindowsMobile.PocketOutlook.dll
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\Microsoft.WindowsMobile.xml
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\Microsoft.WindowsMobile.Status.xml
+C:\Projects\PalletReceive\PalletReceiveCE7\bin\Debug\Microsoft.WindowsMobile.PocketOutlook.xml
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Forms.About.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Forms.ChangeLocation.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.ChangePalletInfo.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.ChangePalletInfoSL.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.ChangePassword.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Home.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.ItemGroupDetail.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.ItemSummary.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Login.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.OfflineScan.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Forms.OfflineTransfer.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Search.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Settings.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.Properties.Resources.resources
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.csproj.GenerateResource.Cache
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.exe
+C:\Projects\PalletReceive\PalletReceiveCE7\obj\Debug\PalletReceiveCE7.pdb

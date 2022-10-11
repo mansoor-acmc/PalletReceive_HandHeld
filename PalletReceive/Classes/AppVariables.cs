@@ -24,7 +24,7 @@ namespace PalletReceive
         public static List<WmsLocationContract> WarehouseLocations { get; set; }
         
 
-        public static readonly string VersionNumber = "Version 2.6.0.0";//version
+        public static readonly string VersionNumber = "Version 2.6.1.0";//version
         public static readonly string ProjectName = "PalletReceived";
         public static readonly string NetworkDown = "Network/WiFi is down. Please contact Network administrator.";        
     }
